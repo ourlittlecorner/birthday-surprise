@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For Punnu ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@400;500;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #fffaf7;
+      --cream-dark: #f8eee9;
+      --pink: #f4dce3;
+      --pink-dark: #d89aaa;
+      --lavender: #e9e3f5;
+      --blue: #dfeaf4;
+      --text: #44383d;
+      --muted: #8c7b81;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(95, 68, 77, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--pink);
+      color: var(--text);
+    }
+
+    /* Floating background shapes */
+
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(3px);
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .blob.one {
+      width: 280px;
+      height: 280px;
+      background: var(--pink);
+      top: -100px;
+      right: -80px;
+    }
+
+    .blob.two {
+      width: 230px;
+      height: 230px;
+      background: var(--lavender);
+      bottom: 10%;
+      left: -120px;
+    }
+
+    .blob.three {
+      width: 160px;
+      height: 160px;
+      background: var(--blue);
+      top: 45%;
+      right: -70px;
+    }
+
+    /* Navigation */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(255, 250, 247, 0.78);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(216, 154, 170, 0.08);
+    }
+
+    .logo {
+      font-family: "Caveat", cursive;
+      font-size: 25px;
+      color: var(--pink-dark);
+      text-decoration: none;
+    }
+
+    .nav-heart {
+      color: var(--pink-dark);
+      font-size: 18px;
+    }
+
+    /* General */
+
+    section {
+      width: min(1050px, 88%);
+      margin: auto;
+      padding: 110px 0;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--pink-dark);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: clamp(34px, 5vw, 55px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      max-width: 600px;
+      color: var(--muted);
+      margin-bottom: 50px;
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+      position: relative;
+    }
+
+    .hero-inner {
+      max-width: 850px;
+      animation: fadeUp 1.2s ease forwards;
+    }
+
+    .hero-small {
+      font-family: "Caveat", cursive;
+      color: var(--pink-dark);
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(60px, 10vw, 110px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--pink-dark);
+      font-style: italic;
+    }
+
+    .hero-subtitle {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(20px, 3vw, 28px);
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .hero-description {
+      max-width: 600px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 13px 27px;
+      border-radius: 50px;
+      background: var(--text);
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .scroll-note {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: #aa989e;
+      letter-spacing: 1px;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-photo {
+      aspect-ratio: 4 / 5;
+      border-radius: 220px 220px 20px 20px;
+      overflow: hidden;
+      background: var(--pink);
+      box-shadow: var(--shadow);
+      transform: rotate(-2deg);
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-text {
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    .handwritten {
+      font-family: "Caveat", cursive;
+      font-size: 28px;
+      color: var(--pink-dark);
+      margin-top: 25px;
+    }
+
+    /* Little Things */
+
+    .things-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .thing {
+      padding: 30px 25px;
+      min-height: 190px;
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(216, 154, 170, 0.1);
+      transition: 0.35s ease;
+    }
+
+    .thing:nth-child(2),
+    .thing:nth-child(5) {
+      background: #f8f3fb;
+    }
+
+    .thing:nth-child(3),
+    .thing:nth-child(6) {
+      background: #f3f8fc;
+    }
+
+    .thing:hover {
+      transform: translateY(-7px) rotate(1deg);
+    }
+
+    .thing-number {
+      font-family: "Caveat", cursive;
+      color: var(--pink-dark);
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .thing h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .thing p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Memories */
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      align-items: start;
+    }
+
+    .memory {
+      background: white;
+      padding: 12px 12px 25px;
+      box-shadow: var(--shadow);
+      transition: 0.4s ease;
+    }
+
+    .memory:nth-child(1) {
+      transform: rotate(-2deg);
+    }
+
+    .memory:nth-child(2) {
+      transform: rotate(2deg);
+      margin-top: 35px;
+    }
+
+    .memory:nth-child(3) {
+      transform: rotate(-1deg);
+    }
+
+    .memory:nth-child(4) {
+      transform: rotate(2deg);
+      margin-top: 25px;
+    }
+
+    .memory:nth-child(5) {
+      transform: rotate(-2deg);
+    }
+
+    .memory:nth-child(6) {
+      transform: rotate(1deg);
+      margin-top: 30px;
+    }
+
+    .memory:hover {
+      transform: rotate(0deg) translateY(-8px) scale(1.02);
+    }
+
+    .memory-image {
+      width: 100%;
+      aspect-ratio: 1 / 1.1;
+      overflow: hidden;
+      background: var(--cream-dark);
+      margin-bottom: 18px;
+    }
+
+    .memory-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s ease;
+    }
+
+    .memory:hover img {
+      transform: scale(1.04);
+    }
+
+    .memory-caption {
+      padding: 0 8px;
+      font-family: "Caveat", cursive;
+      font-size: 22px;
+      color: #695a60;
+    }
+
+    /* Timeline */
+
+    .timeline {
+      max-width: 700px;
+      margin: 60px auto 0;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #e5c7cf;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 55px;
+      margin-bottom: 50px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 7px;
+      top: 7px;
+      width: 17px;
+      height: 17px;
+      background: var(--pink-dark);
+      border: 4px solid var(--cream);
+      border-radius: 50%;
+    }
+
+    .timeline-date {
+      font-family: "Caveat", cursive;
+      color: var(--pink-dark);
+      font-size: 21px;
+    }
+
+    .timeline-item h3 {
+      font-size: 25px;
+      margin: 4px 0 7px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Letter */
+
+    .letter-wrapper {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .letter {
+      background: #fffdfb;
+      padding: clamp(35px, 7vw, 75px);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      position: relative;
+      border: 1px solid #f0e2de;
+    }
+
+    .letter::before {
+      content: "♡";
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      font-size: 30px;
+      color: var(--pink-dark);
+    }
+
+    .letter-title {
+      font-family: "Caveat", cursive;
+      font-size: 34px;
+      color: var(--pink-dark);
+      margin-bottom: 25px;
+    }
+
+    .letter p {
+      color: #6f6267;
+      margin-bottom: 18px;
+    }
+
+    .signature {
+      font-family: "Caveat", cursive;
+      font-size: 32px;
+      color: var(--pink-dark);
+      margin-top: 30px;
+    }
+
+    /* Final */
+
+    .final {
+      text-align: center;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .final h2 {
+      max-width: 750px;
+    }
+
+    .final-message {
+      max-width: 570px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .surprise-button {
+      border: none;
+      cursor: pointer;
+      padding: 15px 30px;
+      border-radius: 50px;
+      background: var(--pink);
+      color: #634c54;
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .surprise-button:hover {
+      background: var(--pink-dark);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .surprise {
+      max-width: 650px;
+      margin-top: 30px;
+      display: none;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .surprise.show {
+      display: block;
+    }
+
+    .surprise p {
+      font-family: "Caveat", cursive;
+      font-size: 31px;
+      color: var(--pink-dark);
+      line-height: 1.4;
+    }
+
+    /* Footer */
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 45px;
+      color: #aa989e;
+      font-size: 12px;
+    }
+
+    footer span {
+      color: var(--pink-dark);
+    }
+
+    /* Animations */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+
+    @media (max-width: 800px) {
+
+      section {
+        padding: 80px 0;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .about-photo {
+        max-width: 330px;
+        margin: auto;
+      }
+
+      .things-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .memory-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      nav {
+        padding: 17px 6%;
+      }
+
+      .logo {
+        font-size: 23px;
+      }
+
+      section {
+        width: 86%;
+        padding: 70px 0;
+      }
+
+      .hero {
+        min-height: 95vh;
+      }
+
+      .hero h1 {
+        font-size: 57px;
+      }
+
+      .hero-small {
+        font-size: 22px;
+      }
+
+      .hero-subtitle {
+        font-size: 21px;
+      }
+
+      .things-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .memory-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .memory:nth-child(n) {
+        margin-top: 0;
+      }
+
+      .memory {
+        max-width: 340px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .letter {
+        padding: 38px 25px;
+      }
+
+      .surprise p {
+        font-size: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="blob one"></div>
+  <div class="blob two"></div>
+  <div class="blob three"></div>
+
+  <!-- Navigation -->
+
+  <nav>
+    <a href="#" class="logo">for punnu ♡</a>
+    <div class="nav-heart">♡</div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="hero-inner">
+
+      <div class="hero-small">a little something for you...</div>
+
+      <h1>Happy Birthday, <span>Punnu.</span></h1>
+
+      <div class="hero-subtitle">
+        August 15 — it's our birthday hehe ♡
+      </div>
+
+      <p class="hero-description">
+        A tiny corner of the internet dedicated to one of my favourite
+        people in the whole world.
+      </p>
+
+      <a href="#about" class="hero-button">
+        Come inside ♡
+      </a>
+
+    </div>
+
+    <div class="scroll-note">
+      scroll slowly ↓
+    </div>
+
+  </header>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="eyebrow">01 — for you</div>
+
+    <div class="about-grid">
+
+      <div class="about-photo">
+        <!-- Replace photo1.jpg with your first photo -->
+        <img src="photo1.jpg" alt="A favourite memory">
+      </div>
+
+      <div>
+
+        <h2>
+          You're so much more than just my boyfriend.
+        </h2>
+
+        <p class="about-text">
+          You're my best friend, my favourite person to tell everything to,
+          my comfort person, and honestly... my girlie too.
+          <br><br>
+          Somehow you're all of those things at once.
+          You're the person who's always there for me, who notices the
+          smallest things, remembers things I said once and forgot about,
+          and takes care of me in ways that make me feel so loved.
+        </p>
+
+        <p class="handwritten">
+          and I feel very lucky to have you. ♡
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LITTLE THINGS -->
+
+  <section>
+
+    <div class="eyebrow">02 — the little things</div>
+
+    <h2>Things that make you, you.</h2>
+
+    <p class="section-intro">
+      Maybe they're little things. But somehow, they're the things I
+      remember the most.
+    </p>
+
+    <div class="things-grid">
+
+      <div class="thing">
+        <div class="thing-number">01</div>
+        <h3>You always show up.</h3>
+        <p>
+          No matter what is happening, somehow you always manage to be there
+          when I need you.
+        </p>
+      </div>
+
+      <div class="thing">
+        <div class="thing-number">02</div>
+        <h3>You remember everything.</h3>
+        <p>
+          Even the tiny things I casually mention and completely forget
+          about afterwards.
+        </p>
+      </div>
+
+      <div class="thing">
+        <div class="thing-number">03</div>
+        <h3>You take care of me.</h3>
+        <p>
+          In big ways, little ways and all the quiet ways that sometimes
+          mean the most.
+        </p>
+      </div>
+
+      <div class="thing">
+        <div class="thing-number">04</div>
+        <h3>You're my bestie.</h3>
+        <p>
+          You're the first person I want to tell things to, whether they're
+          important or completely stupid.
+        </p>
+      </div>
+
+      <div class="thing">
+        <div class="thing-number">05</div>
+        <h3>You're my girlie too.</h3>
+        <p>
+          The one I can be silly with, dramatic with, emotional with and
+          completely myself around.
+        </p>
+      </div>
+
+      <div class="thing">
+        <div class="thing-number">06</div>
+        <h3>You feel like home.</h3>
+        <p>
+          And maybe that's the simplest way I can explain what you mean to me.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MEMORIES -->
+
+  <section id="memories">
+
+    <div class="eyebrow">03 — little memories</div>
+
+    <h2>Some of my favourite little moments.</h2>
+
+    <p class="section-intro">
+      Six little pieces of us. Add your favourite photos here ♡
+    </p>
+
+    <div class="memory-grid">
+
+      <div class="memory">
+        <div class="memory-image">
+          <img src="photo1.jpg" alt="Memory 1">
+        </div>
+        <div class="memory-caption">
+          one of my favourite versions of us ♡
+        </div>
+      </div>
+
+      <div class="memory">
+        <div class="memory-image">
+          <img src="photo2.jpg" alt="Memory 2">
+        </div>
+        <div class="memory-caption">
+          just us being us.
+        </div>
+      </div>
+
+      <div class="memory">
+        <div class="memory-image">
+          <img src="photo3.jpg" alt="Memory 3">
+        </div>
+        <div class="memory-caption">
+          a moment I wish I could keep forever.
+        </div>
+      </div>
+
+      <div class="memory">
+        <div class="memory-image">
+          <img src="photo4.jpg" alt="Memory 4">
+        </div>
+        <div class="memory-caption">
+          my favourite person to make memories with.
+        </div>
+      </div>
+
+      <div class="memory">
+        <div class="memory-image">
+          <img src="photo5.jpg" alt="Memory 5">
+        </div>
+        <div class="memory-caption">
+          another little piece of us.
+        </div>
+      </div>
+
+      <div class="memory">
+        <div class="memory-image">
+          <img src="photo6.jpg" alt="Memory 6">
+        </div>
+        <div class="memory-caption">
+          and hopefully, just the beginning. ♡
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TIMELINE -->
+
+  <section>
+
+    <div class="eyebrow">04 — our little story</div>
+
+    <h2>A collection of little moments.</h2>
+
+    <p class="section-intro">
+      We don't need a perfect story. I like ours exactly the way it is.
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">somewhere along the way</div>
+        <h3>You became my person.</h3>
+        <p>
+          Somewhere between all the conversations, jokes, random moments
+          and ordinary days, you became someone I couldn't imagine not having.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">then came the little things</div>
+        <h3>The memories started adding up.</h3>
+        <p>
+          The silly moments, the serious ones, the random plans, the
+          conversations that lasted way too long.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">and now</div>
+        <h3>It's still you.</h3>
+        <p>
+          Still the person I want to tell everything to.
+          Still my best friend. Still my favourite human.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">and hopefully...</div>
+        <h3>Many more birthdays together.</h3>
+        <p>
+          More memories, more photographs, more ridiculous conversations
+          and more ordinary days that somehow become special.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LETTER -->
+
+  <section>
+
+    <div class="eyebrow">05 — a letter for you</div>
+
+    <div class="letter-wrapper">
+
+      <div class="letter">
+
+        <div class="letter-title">
+          Dear Punnu,
+        </div>
+
+        <p>
+          Happy birthday to my favourite person. ♡
+        </p>
+
+        <p>
+          I don't think I say this enough, but I really appreciate all
+          the little things you do for me. The way you remember tiny
+          details. The way you know when something is wrong. The way
+          you take care of me without making a big deal about it.
+        </p>
+
+        <p>
+          You're somehow my boyfriend and my best friend and my girlie
+          all at once, and I think that's one of my favourite things
+          about us. I can be completely myself with you. I can tell you
+          everything, be stupid with you, complain about absolutely
+          nothing, and still feel completely understood.
+        </p>
+
+        <p>
+          Thank you for being there for me. Thank you for remembering
+          the small things. Thank you for making me feel cared for.
+          And thank you for being you.
+        </p>
+
+        <p>
+          I hope this birthday brings you even a little bit of the
+          happiness you've given me.
+        </p>
+
+        <p>
+          Here's to another year of you, another year of us, and
+          hopefully a whole lot more memories together.
+        </p>
+
+        <div class="signature">
+          love you always ♡
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL SURPRISE -->
+
+  <section class="final">
+
+    <div class="eyebrow">06 — one last thing</div>
+
+    <h2>
+      Okay... I have one more thing to say.
+    </h2>
+
+    <p class="final-message">
+      Because apparently one entire website wasn't enough.
+    </p>
+
+    <button class="surprise-button" onclick="openSurprise()">
+      Open your surprise ♡
+    </button>
+
+    <div class="surprise" id="surprise">
+
+      <p>
+        Punnu, you're one of the best things that ever happened to me.
+        <br><br>
+        Happy birthday, my bestie, my girlie, my favourite person.
+        <br><br>
+        I love you. ♡
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    made with too much love <span>♡</span> for Punnu
+  </footer>
+
+
+  <script>
+
+    function openSurprise() {
+      const surprise = document.getElementById("surprise");
+
+      surprise.classList.toggle("show");
+
+      if (surprise.classList.contains("show")) {
+        setTimeout(() => {
+          surprise.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }, 150);
+      }
+    }
+
+  </script>
+
+</body>
+</html>
