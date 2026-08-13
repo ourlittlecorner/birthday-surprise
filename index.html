@@ -3,871 +3,880 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f8f5f0">
 
 <title>For Punnu ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap" rel="stylesheet">
 
 <style>
 
 :root {
-  --cream: #faf7f2;
-  --white: #fffdf9;
-  --lavender: #ddd6e9;
-  --lavender-dark: #81758f;
-  --blue: #d3e1e7;
-  --blue-dark: #718a94;
-  --yellow: #e8d58b;
-  --green: #bccbb8;
-  --rose: #d7aaa8;
-  --ink: #29272b;
-  --muted: #716b72;
-  --line: #3c393e;
-  --shadow: rgba(38,34,40,.10);
+    --cream: #faf7f1;
+    --paper: #fffdf9;
+    --lavender: #e4dced;
+    --lavender-deep: #81748f;
+    --blue: #dce8eb;
+    --blue-deep: #718a94;
+    --pink: #ead4d2;
+    --green: #cbd7c6;
+    --ink: #29272b;
+    --muted: #716b72;
+    --border: rgba(45,42,47,.25);
+    --shadow: rgba(39,35,42,.10);
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: "DM Sans", sans-serif;
-  line-height: 1.7;
-  overflow-x: hidden;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
-::selection {
-  background: var(--lavender);
-  color: var(--ink);
-}
-
-/* subtle paper texture */
+/* soft paper texture */
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .035;
-  z-index: 100;
-  background-image:
-    radial-gradient(circle at 20% 30%, #000 0.6px, transparent .7px),
-    radial-gradient(circle at 70% 70%, #000 .6px, transparent .7px);
-  background-size: 18px 18px, 25px 25px;
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: .035;
+    background-image:
+        radial-gradient(circle at 20% 30%, #000 .6px, transparent .8px),
+        radial-gradient(circle at 70% 70%, #000 .6px, transparent .8px);
+    background-size: 20px 20px, 27px 27px;
 }
 
-/* floating stars */
+/* floating decorations */
 
-.float {
-  position: fixed;
-  pointer-events: none;
-  z-index: 2;
-  opacity: .55;
-  animation: float 6s ease-in-out infinite;
+.floating {
+    position: fixed;
+    pointer-events: none;
+    z-index: 2;
+    opacity: .5;
+    font-size: 18px;
+    animation: floatAround 6s ease-in-out infinite;
 }
 
-.f1 {
-  top: 15%;
-  left: 7%;
+.float1 {
+    top: 14%;
+    left: 6%;
 }
 
-.f2 {
-  top: 29%;
-  right: 8%;
-  animation-delay: 1s;
+.float2 {
+    top: 32%;
+    right: 7%;
+    animation-delay: 1s;
 }
 
-.f3 {
-  top: 68%;
-  left: 5%;
-  animation-delay: 2s;
+.float3 {
+    top: 70%;
+    left: 5%;
+    animation-delay: 2s;
 }
 
-.f4 {
-  top: 82%;
-  right: 6%;
-  animation-delay: 3s;
+.float4 {
+    top: 84%;
+    right: 6%;
+    animation-delay: 3s;
 }
 
-@keyframes float {
-  0%,100% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(-12px) rotate(7deg);
-  }
+@keyframes floatAround {
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
 }
 
 /* HERO */
 
 .hero {
-  min-height: 100vh;
-  min-height: 100svh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 50px 22px;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(40,37,42,.12);
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 50px 22px;
+    border-bottom: 1px solid var(--border);
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  width: 430px;
-  height: 430px;
-  border-radius: 50%;
-  background: var(--lavender);
-  opacity: .28;
-  top: -180px;
-  right: -120px;
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: var(--lavender);
+    opacity: .42;
+    top: -230px;
+    right: -120px;
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  background: var(--blue);
-  opacity: .25;
-  bottom: -170px;
-  left: -130px;
+    content: "";
+    position: absolute;
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background: var(--blue);
+    opacity: .4;
+    bottom: -210px;
+    left: -140px;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 850px;
-  animation: heroIn 1.2s ease;
+.hero-inner {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    animation: heroAppear 1.3s ease;
 }
 
-@keyframes heroIn {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes heroAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.label {
-  font-family: "Caveat", cursive;
-  font-size: 24px;
-  color: var(--lavender-dark);
-  margin-bottom: 15px;
+.handwritten {
+    font-family: "Caveat", cursive;
+}
+
+.hero-small {
+    font-family: "Caveat", cursive;
+    font-size: 27px;
+    color: var(--lavender-deep);
+    margin-bottom: 20px;
 }
 
 .cake {
-  display: inline-block;
-  font-size: 55px;
-  margin-bottom: 25px;
-  animation: cake 3s ease-in-out infinite;
+    font-size: 53px;
+    display: inline-block;
+    margin-bottom: 24px;
+    animation: cakeFloat 3.5s ease-in-out infinite;
 }
 
-@keyframes cake {
-  0%,100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(2deg);
-  }
+@keyframes cakeFloat {
+    0%,100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-9px) rotate(2deg);
+    }
 }
 
 .hero h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(4.2rem, 12vw, 8rem);
-  font-weight: 500;
-  letter-spacing: -.055em;
-  line-height: .82;
-  margin-bottom: 25px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 13vw, 9rem);
+    font-weight: 500;
+    letter-spacing: -.065em;
+    line-height: .78;
+    margin-bottom: 28px;
 }
 
 .hero-sub {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.5rem, 3vw, 2.1rem);
-  font-style: italic;
-  color: #625c64;
-  margin-bottom: 40px;
+    font-family: "Italianno", cursive;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    color: #625c64;
+    margin-bottom: 36px;
 }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 13px 24px;
-  background: rgba(255,255,255,.4);
-  font-size: 14px;
-  transition: .3s ease;
+.open-button {
+    display: inline-block;
+    padding: 13px 26px;
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    background: rgba(255,255,255,.42);
+    transition: .3s ease;
 }
 
-.button:hover {
-  background: var(--ink);
-  color: white;
-  transform: translateY(-3px);
+.open-button:hover {
+    background: var(--ink);
+    color: white;
+    transform: translateY(-3px);
 }
 
-.scroll {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Caveat", cursive;
-  color: var(--muted);
-  font-size: 18px;
+.scroll-note {
+    position: absolute;
+    bottom: 23px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Caveat", cursive;
+    font-size: 18px;
+    color: var(--muted);
 }
 
 /* GENERAL */
 
 section {
-  padding: 120px 22px;
-  position: relative;
+    padding: 125px 22px;
 }
 
 .container {
-  max-width: 1050px;
-  margin: auto;
+    max-width: 1050px;
+    margin: auto;
 }
 
-.section-label {
-  font-family: "Caveat", cursive;
-  font-size: 23px;
-  color: var(--lavender-dark);
-  margin-bottom: 8px;
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
-.section-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  line-height: .9;
-  font-weight: 500;
-  letter-spacing: -.045em;
-  margin-bottom: 28px;
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* LOVE */
 
 .love {
-  background: var(--white);
-  text-align: center;
+    background: var(--paper);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.love::before {
+    content: "♡";
+    position: absolute;
+    font-size: 170px;
+    color: var(--pink);
+    opacity: .18;
+    top: 40px;
+    left: 7%;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.love::after {
+    content: "✦";
+    position: absolute;
+    font-size: 75px;
+    color: var(--lavender-deep);
+    opacity: .18;
+    bottom: 50px;
+    right: 9%;
 }
 
 .love-inner {
-  max-width: 760px;
-  margin: auto;
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
 }
 
-.love h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3.2rem, 8vw, 6rem);
-  line-height: .9;
-  font-weight: 500;
-  letter-spacing: -.04em;
-  margin-bottom: 25px;
+.love-heading {
+    font-family: "Italianno", cursive;
+    font-size: clamp(4.2rem, 9vw, 7rem);
+    font-weight: 400;
+    line-height: .9;
+    margin-bottom: 25px;
 }
 
-.love p {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  color: var(--muted);
+.love-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    color: var(--muted);
 }
 
-.heart {
-  margin-top: 30px;
-  font-size: 27px;
-  animation: heartbeat 2.5s infinite;
+.small-heart {
+    font-size: 28px;
+    margin-top: 28px;
+    animation: heartbeat 2.5s infinite;
 }
 
 @keyframes heartbeat {
-  0%,100% { transform: scale(1); }
-  10% { transform: scale(1.15); }
-  20% { transform: scale(1); }
+    0%,100% { transform: scale(1); }
+    10% { transform: scale(1.15); }
+    20% { transform: scale(1); }
 }
 
 /* THINGS */
 
 .things {
-  background: var(--cream);
+    background: var(--cream);
+}
+
+.section-script {
+    font-family: "Caveat", cursive;
+    color: var(--lavender-deep);
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(3.3rem, 7vw, 6rem);
+    line-height: .88;
+    letter-spacing: -.05em;
+    margin-bottom: 30px;
 }
 
 .intro {
-  max-width: 650px;
-  color: var(--muted);
-  margin-bottom: 45px;
+    max-width: 670px;
+    color: var(--muted);
+    margin-bottom: 45px;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 18px;
+.love-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
 }
 
-.card {
-  position: relative;
-  min-height: 190px;
-  padding: 32px;
-  border: 1px solid rgba(52,49,55,.22);
-  background: var(--white);
-  box-shadow: 0 16px 35px var(--shadow);
-  transition: .4s ease;
+.love-card {
+    position: relative;
+    padding: 32px;
+    min-height: 190px;
+    border: 1px solid var(--border);
+    background: var(--paper);
+    box-shadow: 0 15px 35px var(--shadow);
+    transition: .4s ease;
 }
 
-.card:nth-child(2) {
-  background: #f5f1fa;
+.love-card:nth-child(2) {
+    background: #f3eff8;
 }
 
-.card:nth-child(3) {
-  background: #f1f7f8;
+.love-card:nth-child(3) {
+    background: #f1f7f8;
 }
 
-.card:nth-child(4) {
-  background: #fbf5e9;
+.love-card:nth-child(4) {
+    background: #fbf5e9;
 }
 
-.card:nth-child(5) {
-  background: #f5f1fa;
+.love-card:nth-child(5) {
+    background: #f3eff8;
 }
 
-.card:nth-child(6) {
-  background: #f1f7f8;
+.love-card:nth-child(6) {
+    background: #f1f7f8;
 }
 
-.card:hover {
-  transform: translateY(-7px) rotate(-.5deg);
-  box-shadow: 0 25px 45px rgba(38,34,40,.14);
+.love-card:hover {
+    transform: translateY(-7px) rotate(-.4deg);
+    box-shadow: 0 25px 45px rgba(39,35,42,.14);
 }
 
-.card h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 31px;
-  line-height: 1;
-  font-weight: 600;
-  margin-bottom: 13px;
+.love-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    line-height: 1;
+    margin-bottom: 13px;
 }
 
-.card p {
-  font-size: 14px;
-  color: #6f6970;
+.love-card p {
+    color: #6d6870;
+    font-size: 14px;
 }
 
-.card-doodle {
-  position: absolute;
-  right: 18px;
-  bottom: 12px;
-  font-size: 22px;
-  opacity: .6;
+.corner-doodle {
+    position: absolute;
+    right: 18px;
+    bottom: 12px;
+    opacity: .55;
+    font-size: 23px;
 }
 
-/* FOOD DOODLES */
+/* DOODLE STRIP */
 
-.doodles {
-  background: #eeeaf4;
-  padding: 32px 20px;
-  border-top: 1px solid rgba(52,49,55,.12);
-  border-bottom: 1px solid rgba(52,49,55,.12);
+.doodle-strip {
+    background: #eee9f3;
+    border-top: 1px solid rgba(45,42,47,.12);
+    border-bottom: 1px solid rgba(45,42,47,.12);
+    padding: 28px 20px;
+    overflow: hidden;
 }
 
-.doodle-row {
-  max-width: 900px;
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
+.doodle-line {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 18px;
 }
 
 .doodle {
-  text-align: center;
-  font-family: "Caveat", cursive;
-  font-size: 19px;
-  color: #68616b;
-  animation: bob 4s ease-in-out infinite;
+    font-family: "Caveat", cursive;
+    font-size: 18px;
+    color: #67616a;
+    text-align: center;
+    animation: tinyFloat 4s ease-in-out infinite;
 }
 
 .doodle:nth-child(2) {
-  animation-delay: .8s;
+    animation-delay: .8s;
 }
 
 .doodle:nth-child(3) {
-  animation-delay: 1.5s;
+    animation-delay: 1.5s;
 }
 
 .doodle:nth-child(4) {
-  animation-delay: 2.2s;
+    animation-delay: 2.1s;
 }
 
-.doodle span {
-  display: block;
-  font-size: 31px;
-  margin-bottom: 2px;
+.doodle-icon {
+    display: block;
+    font-size: 29px;
+    margin-bottom: 1px;
 }
 
-@keyframes bob {
-  0%,100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+@keyframes tinyFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 /* BOUQUET */
 
 .bouquet {
-  background: var(--white);
-  text-align: center;
-  overflow: hidden;
+    background: var(--paper);
+    text-align: center;
+    position: relative;
 }
 
-.bouquet-note {
-  font-family: "Caveat", cursive;
-  font-size: 23px;
-  color: var(--muted);
+.bouquet-heading {
+    font-family: "Italianno", cursive;
+    font-size: clamp(4rem, 8vw, 6.5rem);
+    line-height: .9;
+    margin-bottom: 25px;
 }
 
-.bouquet-stage {
-  position: relative;
-  height: 430px;
-  max-width: 700px;
-  margin: 45px auto 0;
+.bouquet-sub {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.45rem;
+    color: var(--muted);
 }
 
-.flower {
-  position: absolute;
-  font-size: 65px;
-  filter: drop-shadow(0 8px 9px rgba(0,0,0,.08));
-  animation: sway 5s ease-in-out infinite;
+.bouquet-frame {
+    max-width: 720px;
+    margin: 50px auto 0;
+    padding: 12px;
+    border: 1px solid var(--border);
+    background: #f7f2eb;
+    box-shadow:
+        0 20px 50px rgba(39,35,42,.12),
+        inset 0 0 0 1px rgba(255,255,255,.7);
+    position: relative;
 }
 
-.sun1 {
-  left: 23%;
-  top: 80px;
+.bouquet-frame::before,
+.bouquet-frame::after {
+    position: absolute;
+    font-size: 24px;
+    color: var(--lavender-deep);
+    z-index: 3;
 }
 
-.sun2 {
-  right: 23%;
-  top: 100px;
-  animation-delay: 1s;
+.bouquet-frame::before {
+    content: "✦";
+    top: 8px;
+    left: 14px;
 }
 
-.lily1 {
-  left: 38%;
-  top: 15px;
-  font-size: 58px;
-  animation-delay: .6s;
+.bouquet-frame::after {
+    content: "♡";
+    bottom: 7px;
+    right: 15px;
 }
 
-.lily2 {
-  left: 16%;
-  top: 155px;
-  font-size: 52px;
-  animation-delay: 1.7s;
+.bouquet-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    background:
+        linear-gradient(135deg, #e7ddec, #dce8eb);
 }
 
-.rose1 {
-  right: 37%;
-  top: 45px;
-  font-size: 54px;
-  animation-delay: 2s;
-}
-
-.rose2 {
-  right: 16%;
-  top: 165px;
-  font-size: 50px;
-  animation-delay: 2.8s;
-}
-
-@keyframes sway {
-  0%,100% {
-    transform: rotate(-3deg) translateY(0);
-  }
-  50% {
-    transform: rotate(4deg) translateY(-7px);
-  }
-}
-
-.stem {
-  position: absolute;
-  width: 4px;
-  height: 185px;
-  background: #879c82;
-  bottom: 58px;
-  left: 50%;
-  border-radius: 10px;
-  transform-origin: bottom;
-}
-
-.stem1 { transform: rotate(-22deg); }
-.stem2 { transform: rotate(22deg); }
-.stem3 { transform: rotate(-7deg); }
-.stem4 { transform: rotate(8deg); }
-
-.wrap {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 155px;
-  height: 155px;
-  background: linear-gradient(135deg,#dbc8aa,#eee2ce);
-  clip-path: polygon(10% 0,90% 0,72% 100%,28% 100%);
-  border: 2px solid rgba(52,49,55,.2);
-}
-
-.ribbon {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 38px;
-  z-index: 3;
+.bouquet-caption {
+    padding: 14px 10px 9px;
+    font-family: "Caveat", cursive;
+    font-size: 21px;
+    color: #6c6670;
 }
 
 /* MEMORIES */
 
 .memories {
-  background: #e9e3ef;
-  overflow: hidden;
+    background: #e9e3ef;
+    position: relative;
+    overflow: hidden;
 }
 
-.memory-head {
-  text-align: center;
-  margin-bottom: 65px;
+.memories-head {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.memory-head p {
-  color: var(--muted);
-  max-width: 600px;
-  margin: auto;
+.memories-head h2 {
+    font-family: "Italianno", cursive;
+    font-size: clamp(3.4rem, 7vw, 5.8rem);
+    font-weight: 400;
+    line-height: .9;
+}
+
+.memories-head p {
+    max-width: 760px;
+    margin: 20px auto 0;
+    font-family: "Caveat", cursive;
+    font-size: 25px;
+    color: #68616b;
 }
 
 .photo-wall {
-  max-width: 950px;
-  min-height: 650px;
-  margin: auto;
-  position: relative;
+    max-width: 970px;
+    min-height: 700px;
+    margin: auto;
+    position: relative;
 }
 
-.string {
-  position: absolute;
-  top: 0;
-  width: 1px;
-  height: 150px;
-  background: #5d5860;
-  opacity: .55;
-  transform-origin: top;
+.thread {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 160px;
+    background: #5f5961;
+    opacity: .45;
+    transform-origin: top;
 }
 
-.photo {
-  position: absolute;
-  width: 190px;
-  padding: 9px 9px 34px;
-  background: white;
-  box-shadow: 0 18px 35px rgba(35,31,38,.15);
-  border: 1px solid rgba(0,0,0,.07);
-  opacity: 0;
-  transition: .8s ease;
+.thread1 {
+    left: 12%;
+    transform: rotate(-4deg);
 }
 
-.photo.show {
-  opacity: 1;
-  transform: rotate(var(--rotation));
+.thread2 {
+    left: 37%;
+    transform: rotate(4deg);
 }
 
-.photo:hover {
-  transform: translateY(-10px) rotate(0deg) scale(1.04);
-  z-index: 5;
+.thread3 {
+    right: 37%;
+    transform: rotate(-3deg);
 }
 
-.photo img {
-  display: block;
-  width: 100%;
-  height: 205px;
-  object-fit: cover;
-  background: #ddd;
+.thread4 {
+    right: 12%;
+    transform: rotate(5deg);
 }
 
-.photo-caption {
-  position: absolute;
-  bottom: 6px;
-  left: 13px;
-  font-family: "Caveat", cursive;
-  font-size: 19px;
-  color: #625d64;
+.thread5 {
+    left: 27%;
+    top: 250px;
+    height: 100px;
+    transform: rotate(5deg);
 }
 
-.clip {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 21px;
-  height: 33px;
-  border: 2px solid #57525a;
-  border-radius: 5px;
-  background: #d7c4a8;
-  z-index: 3;
+.thread6 {
+    right: 27%;
+    top: 255px;
+    height: 100px;
+    transform: rotate(-5deg);
 }
 
-.p1 {
-  left: 3%;
-  top: 90px;
-  --rotation: -6deg;
+.polaroid {
+    position: absolute;
+    width: 195px;
+    padding: 9px 9px 36px;
+    background: #fffefa;
+    box-shadow: 0 18px 35px rgba(35,31,38,.15);
+    border: 1px solid rgba(0,0,0,.06);
+    opacity: 0;
+    transition: opacity .8s ease, transform .8s ease;
 }
 
-.p2 {
-  left: 28%;
-  top: 25px;
-  --rotation: 4deg;
+.polaroid.show {
+    opacity: 1;
+    transform: rotate(var(--rotation));
 }
 
-.p3 {
-  right: 28%;
-  top: 60px;
-  --rotation: -3deg;
+.polaroid:hover {
+    transform: translateY(-10px) rotate(0deg) scale(1.04);
+    z-index: 5;
 }
 
-.p4 {
-  right: 3%;
-  top: 105px;
-  --rotation: 7deg;
+.polaroid img {
+    width: 100%;
+    height: 205px;
+    object-fit: cover;
+    display: block;
+    background: #ddd;
 }
 
-.p5 {
-  left: 17%;
-  top: 340px;
-  --rotation: 5deg;
+.polaroid-caption {
+    position: absolute;
+    left: 13px;
+    bottom: 7px;
+    font-family: "Caveat", cursive;
+    font-size: 19px;
+    color: #625d64;
 }
 
-.p6 {
-  right: 17%;
-  top: 350px;
-  --rotation: -6deg;
+.photo-clip {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 21px;
+    height: 32px;
+    border: 2px solid #59535b;
+    border-radius: 5px;
+    background: #d9c6a9;
+    z-index: 3;
 }
 
-.line1 {
-  left: 12%;
-  transform: rotate(-3deg);
+.photo1 {
+    left: 3%;
+    top: 85px;
+    --rotation: -6deg;
 }
 
-.line2 {
-  left: 37%;
-  transform: rotate(3deg);
+.photo2 {
+    left: 28%;
+    top: 20px;
+    --rotation: 4deg;
 }
 
-.line3 {
-  right: 37%;
-  transform: rotate(-2deg);
+.photo3 {
+    right: 28%;
+    top: 55px;
+    --rotation: -3deg;
 }
 
-.line4 {
-  right: 12%;
-  transform: rotate(4deg);
+.photo4 {
+    right: 3%;
+    top: 95px;
+    --rotation: 7deg;
 }
 
-.line5 {
-  left: 27%;
-  top: 245px;
-  height: 100px;
-  transform: rotate(4deg);
+.photo5 {
+    left: 17%;
+    top: 350px;
+    --rotation: 5deg;
 }
 
-.line6 {
-  right: 27%;
-  top: 255px;
-  height: 95px;
-  transform: rotate(-4deg);
+.photo6 {
+    right: 17%;
+    top: 355px;
+    --rotation: -6deg;
 }
 
 /* FINAL */
 
 .final {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  background: var(--white);
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+}
+
+.final::before {
+    content: "♡";
+    position: absolute;
+    left: 8%;
+    top: 14%;
+    font-size: 100px;
+    color: var(--pink);
+    opacity: .22;
+    animation: floatAround 5s ease-in-out infinite;
+}
+
+.final::after {
+    content: "♡";
+    position: absolute;
+    right: 8%;
+    bottom: 15%;
+    font-size: 85px;
+    color: var(--lavender-deep);
+    opacity: .2;
+    animation: floatAround 6s ease-in-out infinite reverse;
 }
 
 .final-inner {
-  max-width: 800px;
-  margin: auto;
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.final-small {
+    font-family: "Caveat", cursive;
+    font-size: 25px;
+    color: var(--lavender-deep);
 }
 
 .final h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem,7vw,5.8rem);
-  line-height: .9;
-  font-weight: 500;
-  letter-spacing: -.04em;
-  margin: 20px 0 35px;
+    font-family: "Italianno", cursive;
+    font-size: clamp(4rem, 9vw, 7rem);
+    font-weight: 400;
+    line-height: .85;
+    margin: 25px 0 38px;
 }
 
-.final p {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.5rem;
-  color: #625c64;
-  margin: 8px 0;
+.final-message {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #625c64;
+    line-height: 1.5;
 }
 
-.final-main {
-  font-family: "Caveat", cursive !important;
-  font-size: 2.4rem !important;
-  color: var(--ink) !important;
-  margin: 22px 0 !important;
+.final-message strong {
+    font-weight: 600;
+    color: var(--ink);
 }
 
-.letters {
-  margin-top: 35px;
+.heart-line {
+    margin: 27px 0;
+    font-size: 23px;
+    letter-spacing: 13px;
+    color: #a98e9c;
 }
 
 footer {
-  background: var(--white);
-  text-align: center;
-  padding: 25px 20px 40px;
-  color: #989198;
-  font-family: "Caveat", cursive;
-  font-size: 18px;
+    text-align: center;
+    background: var(--paper);
+    padding: 25px 20px 42px;
+    font-family: "Caveat", cursive;
+    font-size: 19px;
+    color: #89828b;
 }
 
-/* REVEAL */
+/* mobile */
 
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity .9s ease, transform .9s ease;
+@media (max-width: 700px) {
+
+    section {
+        padding: 90px 20px;
+    }
+
+    .hero {
+        padding: 45px 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(4.3rem, 19vw, 6rem);
+    }
+
+    .cake {
+        font-size: 45px;
+    }
+
+    .love-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .love-card {
+        min-height: 160px;
+    }
+
+    .doodle-line {
+        gap: 8px;
+    }
+
+    .doodle {
+        font-size: 15px;
+    }
+
+    .doodle-icon {
+        font-size: 26px;
+    }
+
+    .bouquet-frame {
+        margin-top: 35px;
+    }
+
+    .photo-wall {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 14px;
+        min-height: auto;
+        padding: 10px 5px 20px;
+    }
+
+    .thread {
+        display: none;
+    }
+
+    .polaroid {
+        position: relative;
+        width: 100%;
+        top: auto;
+        left: auto;
+        right: auto;
+        padding: 7px 7px 29px;
+    }
+
+    .polaroid.show {
+        transform: rotate(var(--rotation));
+    }
+
+    .polaroid img {
+        height: 190px;
+    }
+
+    .photo-clip {
+        display: none;
+    }
+
+    .final h2 {
+        font-size: clamp(4rem, 15vw, 5.5rem);
+    }
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+@media (max-width: 430px) {
 
-/* MOBILE */
+    .photo-wall {
+        grid-template-columns: 1fr;
+        max-width: 290px;
+    }
 
-@media(max-width:700px) {
+    .polaroid img {
+        height: 275px;
+    }
 
-  section {
-    padding: 90px 20px;
-  }
-
-  .hero {
-    padding: 45px 20px;
-  }
-
-  .hero h1 {
-    font-size: clamp(4rem,18vw,5.8rem);
-  }
-
-  .cake {
-    font-size: 45px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    min-height: 165px;
-    padding: 27px;
-  }
-
-  .doodle-row {
-    gap: 8px;
-  }
-
-  .doodle {
-    font-size: 15px;
-  }
-
-  .doodle span {
-    font-size: 27px;
-  }
-
-  .bouquet-stage {
-    height: 390px;
-  }
-
-  .flower {
-    font-size: 50px;
-  }
-
-  .sun1 { left: 8%; }
-  .sun2 { right: 8%; }
-  .lily1 { left: 34%; }
-  .rose1 { right: 34%; }
-  .lily2 { left: 3%; }
-  .rose2 { right: 3%; }
-
-  .photo-wall {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 14px;
-    min-height: auto;
-    padding: 10px 5px 20px;
-  }
-
-  .string {
-    display: none;
-  }
-
-  .photo {
-    position: relative;
-    width: 100%;
-    top: auto;
-    left: auto;
-    right: auto;
-    padding: 7px 7px 28px;
-  }
-
-  .photo.show {
-    transform: rotate(var(--rotation));
-  }
-
-  .photo img {
-    height: 190px;
-  }
-
-  .clip {
-    display: none;
-  }
-
-  .photo-caption {
-    font-size: 17px;
-  }
-}
-
-@media(max-width:420px) {
-
-  .photo-wall {
-    grid-template-columns: 1fr;
-    max-width: 275px;
-  }
-
-  .photo img {
-    height: 275px;
-  }
+    .doodle-line {
+        flex-wrap: wrap;
+    }
 
 }
 
@@ -876,283 +885,298 @@ footer {
 
 <body>
 
-<div class="float f1">✦</div>
-<div class="float f2">✧</div>
-<div class="float f3">✦</div>
-<div class="float f4">✧</div>
+<!-- floating decorations -->
+
+<div class="floating float1">✦</div>
+<div class="floating float2">♡</div>
+<div class="floating float3">✧</div>
+<div class="floating float4">♡</div>
 
 
 <!-- HERO -->
 
 <header class="hero">
 
-  <div class="hero-content">
+    <div class="hero-inner">
 
-    <div class="label">for punnu ♡</div>
+        <div class="hero-small">
+            for punnu ♡
+        </div>
 
-    <div class="cake">🎂</div>
+        <div class="cake">
+            🎂
+        </div>
 
-    <h1>
-      Happy Birthday,<br>
-      Punnu.
-    </h1>
+        <h1>
+            Happy Birthday,<br>
+            Punnu.
+        </h1>
 
-    <p class="hero-sub">
-      it's our birthday hehe ♡
-    </p>
+        <div class="hero-sub">
+            it's our birthday hehe ♡
+        </div>
 
-    <a href="#start" class="button">
-      open your surprise ↓
-    </a>
+        <a href="#love" class="open-button">
+            open your surprise ↓
+        </a>
 
-  </div>
+    </div>
 
-  <div class="scroll">
-    keep scrolling ♡
-  </div>
+    <div class="scroll-note">
+        keep scrolling ♡
+    </div>
 
 </header>
 
 
 <!-- LOVE -->
 
-<section class="love" id="start">
+<section class="love" id="love">
 
-  <div class="love-inner reveal">
+    <div class="love-inner reveal">
 
-    <div class="section-label">
-      just for you
+        <h2 class="love-heading">
+            you are the love<br>
+            of my life.
+        </h2>
+
+        <p class="love-text">
+            I'm so lucky to have found you, my soulmate.
+        </p>
+
+        <div class="small-heart">
+            ♡
+        </div>
+
     </div>
-
-    <h2>
-      you are the love<br>
-      of my life.
-    </h2>
-
-    <p>
-      I'm so lucky to have found you, my soulmate.
-    </p>
-
-    <div class="heart">
-      ♡
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- THINGS I LOVE -->
+<!-- THINGS I LOVE ABOUT YOU -->
 
 <section class="things">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="reveal">
+        <div class="reveal">
 
-      <div class="section-label">
-        little things
-      </div>
+            <div class="section-script">
+                little things ♡
+            </div>
 
-      <h2 class="section-title">
-        things i love<br>
-        about you.
-      </h2>
+            <h2 class="section-title">
+                things i love<br>
+                about you.
+            </h2>
 
-      <p class="intro">
-        Maybe they're little things. Maybe they're things you don't even
-        realise you do. But somehow, they're some of the things I love
-        most about you.
-      </p>
+            <p class="intro">
+                Maybe they're little things. Maybe they're things you don't
+                even realise you do. But somehow, they're some of the things
+                I love most about you.
+            </p>
+
+        </div>
+
+
+        <div class="love-grid">
+
+            <article class="love-card reveal">
+
+                <h3>
+                    You're the most caring person ever.
+                </h3>
+
+                <p>
+                    You think of yourself later and everyone else first —
+                    which I almost always hate about you 😭 — but I think
+                    that's also what makes you, you.
+                </p>
+
+                <div class="corner-doodle">
+                    ♡
+                </div>
+
+            </article>
+
+
+            <article class="love-card reveal">
+
+                <h3>
+                    You always show up.
+                </h3>
+
+                <p>
+                    No matter what is happening, somehow you always manage
+                    to be there when I need you.
+                </p>
+
+                <div class="corner-doodle">
+                    ✦
+                </div>
+
+            </article>
+
+
+            <article class="love-card reveal">
+
+                <h3>
+                    You remember everything.
+                </h3>
+
+                <p>
+                    Even the tiny things I casually mention and completely
+                    forget about afterwards.
+                </p>
+
+                <div class="corner-doodle">
+                    ⌁
+                </div>
+
+            </article>
+
+
+            <article class="love-card reveal">
+
+                <h3>
+                    You're my bestie.
+                </h3>
+
+                <p>
+                    You're the first person I want to tell things to,
+                    whether they're important or completely stupid.
+                </p>
+
+                <div class="corner-doodle">
+                    ♡
+                </div>
+
+            </article>
+
+
+            <article class="love-card reveal">
+
+                <h3>
+                    You're my girlie too.
+                </h3>
+
+                <p>
+                    The one I can be silly with, dramatic with, emotional
+                    with and completely myself around.
+                </p>
+
+                <div class="corner-doodle">
+                    ✿
+                </div>
+
+            </article>
+
+
+            <article class="love-card reveal">
+
+                <h3>
+                    You feel like home.
+                </h3>
+
+                <p>
+                    And maybe that's the simplest way I can explain
+                    what you mean to me.
+                </p>
+
+                <div class="corner-doodle">
+                    ⌂
+                </div>
+
+            </article>
+
+        </div>
 
     </div>
-
-
-    <div class="cards">
-
-      <article class="card reveal">
-
-        <h3>
-          The most caring person ever.
-        </h3>
-
-        <p>
-          You think of yourself later and everyone else first —
-          which I almost always hate about you 😭 — but I think
-          that's also what makes you, you.
-        </p>
-
-        <div class="card-doodle">♡</div>
-
-      </article>
-
-
-      <article class="card reveal">
-
-        <h3>
-          You always show up.
-        </h3>
-
-        <p>
-          No matter what's happening, somehow you're always there
-          when I need you.
-        </p>
-
-        <div class="card-doodle">✦</div>
-
-      </article>
-
-
-      <article class="card reveal">
-
-        <h3>
-          You remember the little things.
-        </h3>
-
-        <p>
-          Even the tiny things I casually mention and completely
-          forget about afterwards.
-        </p>
-
-        <div class="card-doodle">⌁</div>
-
-      </article>
-
-
-      <article class="card reveal">
-
-        <h3>
-          You're my bestie.
-        </h3>
-
-        <p>
-          You're the first person I want to tell things to —
-          whether they're important or completely stupid.
-        </p>
-
-        <div class="card-doodle">♡</div>
-
-      </article>
-
-
-      <article class="card reveal">
-
-        <h3>
-          You're my girlie too.
-        </h3>
-
-        <p>
-          The one I can be silly with, dramatic with, emotional with
-          and completely myself around.
-        </p>
-
-        <div class="card-doodle">✿</div>
-
-      </article>
-
-
-      <article class="card reveal">
-
-        <h3>
-          You feel like home.
-        </h3>
-
-        <p>
-          And maybe that's the simplest way I can explain
-          what you mean to me.
-        </p>
-
-        <div class="card-doodle">⌂</div>
-
-      </article>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- FOOD / INSIDE JOKES -->
+<!-- SCATTERED LITTLE DOODLES -->
 
-<div class="doodles">
+<div class="doodle-strip">
 
-  <div class="doodle-row">
+    <div class="doodle-line">
 
-    <div class="doodle">
-      <span>🍝</span>
-      our pasta
+        <div class="doodle">
+            <span class="doodle-icon">🍝</span>
+            our pasta
+        </div>
+
+        <div class="doodle">
+            <span class="doodle-icon">🥑</span>
+            avocado toasties
+        </div>
+
+        <div class="doodle">
+            <span class="doodle-icon">🧋</span>
+            iced coffee
+        </div>
+
+        <div class="doodle">
+            <span class="doodle-icon">✦</span>
+            us
+        </div>
+
     </div>
-
-    <div class="doodle">
-      <span>🥑</span>
-      avocado toasties
-    </div>
-
-    <div class="doodle">
-      <span>🧋</span>
-      iced coffee
-    </div>
-
-    <div class="doodle">
-      <span>✦</span>
-      little things
-    </div>
-
-  </div>
 
 </div>
 
 
-<!-- BOUQUET -->
+<!-- FLOWERS -->
 
 <section class="bouquet">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="reveal">
+        <div class="reveal">
 
-      <div class="section-label">
-        a little something for you
-      </div>
+            <div class="section-script">
+                a little something for you ♡
+            </div>
 
-      <h2 class="section-title">
-        because you<br>
-        deserve flowers too.
-      </h2>
+            <h2 class="bouquet-heading">
+                because you<br>
+                deserve flowers too.
+            </h2>
 
-      <p class="bouquet-note">
-        sunflowers, lilies & roses — our favourites ♡
-      </p>
+            <p class="bouquet-sub">
+                sunflowers, lilies & roses — our favourites ♡
+            </p>
+
+        </div>
+
+
+        <!--
+            YOUR BOUQUET PHOTO GOES HERE.
+
+            Later, upload your bouquet image to GitHub
+            and rename it:
+
+            bouquet.jpg
+
+            Then this image will automatically appear here.
+        -->
+
+        <div class="bouquet-frame reveal">
+
+            <img
+                class="bouquet-photo"
+                src="bouquet.jpg"
+                alt="A bouquet of flowers"
+            >
+
+            <div class="bouquet-caption">
+                flowers for my favourite person ♡
+            </div>
+
+        </div>
 
     </div>
-
-
-    <div class="bouquet-stage reveal">
-
-      <div class="flower sun1">🌻</div>
-      <div class="flower sun2">🌻</div>
-
-      <div class="flower lily1">🤍</div>
-      <div class="flower lily2">🤍</div>
-
-      <div class="flower rose1">🌹</div>
-      <div class="flower rose2">🌹</div>
-
-      <div class="stem stem1"></div>
-      <div class="stem stem2"></div>
-      <div class="stem stem3"></div>
-      <div class="stem stem4"></div>
-
-      <div class="wrap"></div>
-
-      <div class="ribbon">
-        🎀
-      </div>
-
-    </div>
-
-  </div>
 
 </section>
 
@@ -1161,186 +1185,190 @@ footer {
 
 <section class="memories">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="memory-head reveal">
+        <div class="memories-head reveal">
 
-      <div class="section-label">
-        little pieces of us ♡
-      </div>
+            <h2>
+                some of my favourite memories,
+                actually all of our memories are my favourite.
+            </h2>
 
-      <h2 class="section-title">
-        memories i want<br>
-        to keep forever.
-      </h2>
+        </div>
 
-      <p>
-        A few little moments that deserve their own place here.
-      </p>
+
+        <div class="photo-wall">
+
+            <div class="thread thread1"></div>
+            <div class="thread thread2"></div>
+            <div class="thread thread3"></div>
+            <div class="thread thread4"></div>
+            <div class="thread thread5"></div>
+            <div class="thread thread6"></div>
+
+
+            <!-- PHOTO 1 -->
+
+            <div class="polaroid photo1">
+
+                <div class="photo-clip"></div>
+
+                <img
+                    src="photo1.jpg"
+                    alt="A favourite memory of us"
+                >
+
+                <div class="polaroid-caption">
+                    us ♡
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 2 -->
+
+            <div class="polaroid photo2">
+
+                <div class="photo-clip"></div>
+
+                <img
+                    src="photo2.jpg"
+                    alt="A favourite memory of us"
+                >
+
+                <div class="polaroid-caption">
+                    my favourite
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="polaroid photo3">
+
+                <div class="photo-clip"></div>
+
+                <img
+                    src="photo3.jpg"
+                    alt="A favourite memory of us"
+                >
+
+                <div class="polaroid-caption">
+                    another little memory
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 4 -->
+
+            <div class="polaroid photo4">
+
+                <div class="photo-clip"></div>
+
+                <img
+                    src="photo4.jpg"
+                    alt="A favourite memory of us"
+                >
+
+                <div class="polaroid-caption">
+                    home ♡
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 5 -->
+
+            <div class="polaroid photo5">
+
+                <div class="photo-clip"></div>
+
+                <img
+                    src="photo5.jpg"
+                    alt="A favourite memory of us"
+                >
+
+                <div class="polaroid-caption">
+                    my bestie
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 6 -->
+
+            <div class="polaroid photo6">
+
+                <div class="photo-clip"></div>
+
+                <img
+                    src="photo6.jpg"
+                    alt="A favourite memory of us"
+                >
+
+                <div class="polaroid-caption">
+                    forever one of my favourites
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
-
-
-    <div class="photo-wall">
-
-      <div class="string line1"></div>
-      <div class="string line2"></div>
-      <div class="string line3"></div>
-      <div class="string line4"></div>
-      <div class="string line5"></div>
-      <div class="string line6"></div>
-
-
-      <!-- PHOTO 1 -->
-
-      <div class="photo p1">
-
-        <div class="clip"></div>
-
-        <img src="photo1.jpg" alt="A memory of us">
-
-        <div class="photo-caption">
-          my favourite person
-        </div>
-
-      </div>
-
-
-      <!-- PHOTO 2 -->
-
-      <div class="photo p2">
-
-        <div class="clip"></div>
-
-        <img src="photo2.jpg" alt="A memory of us">
-
-        <div class="photo-caption">
-          us ♡
-        </div>
-
-      </div>
-
-
-      <!-- PHOTO 3 -->
-
-      <div class="photo p3">
-
-        <div class="clip"></div>
-
-        <img src="photo3.jpg" alt="A memory of us">
-
-        <div class="photo-caption">
-          one for the memory box
-        </div>
-
-      </div>
-
-
-      <!-- PHOTO 4 -->
-
-      <div class="photo p4">
-
-        <div class="clip"></div>
-
-        <img src="photo4.jpg" alt="A memory of us">
-
-        <div class="photo-caption">
-          home
-        </div>
-
-      </div>
-
-
-      <!-- PHOTO 5 -->
-
-      <div class="photo p5">
-
-        <div class="clip"></div>
-
-        <img src="photo5.jpg" alt="A memory of us">
-
-        <div class="photo-caption">
-          my bestie
-        </div>
-
-      </div>
-
-
-      <!-- PHOTO 6 -->
-
-      <div class="photo p6">
-
-        <div class="clip"></div>
-
-        <img src="photo6.jpg" alt="A memory of us">
-
-        <div class="photo-caption">
-          another little piece of us
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- FINAL -->
+<!-- FINAL MESSAGE -->
 
 <section class="final">
 
-  <div class="final-inner reveal">
+    <div class="final-inner reveal">
 
-    <div class="label">
-      and finally...
-    </div>
+        <div class="final-small">
+            and finally... ♡
+        </div>
 
-    <h2>
-      Punnu, you're one of the best things
-      that ever happened to me.
-    </h2>
+        <h2>
+            Happiest birthday<br>
+            my baby.
+        </h2>
 
-    <p>
-      Happy birthday, my favourite person.
-    </p>
+        <div class="final-message">
 
-    <p class="final-main">
-      My everything.
-    </p>
+            <p>
+                <strong>
+                    You’re the best thing thats ever happened to me.
+                </strong>
+            </p>
 
-    <p>
-      I love you the most.
-    </p>
+            <p>
+                My everything.
+            </p>
 
-    <p>
-      Can't do this life without you. ♡
-    </p>
+            <div class="heart-line">
+                ♡ ✦ ♡ ✧ ♡
+            </div>
 
+            <p>
+                I love you the most.
+            </p>
 
-    <!-- PUT YOUR OPEN WHEN LINK BELOW -->
+            <p>
+                Can’t do this life without you.
+            </p>
 
-    <div class="letters">
-
-      <a
-        class="button"
-        href="YOUR_OPEN_WHEN_LINK_HERE"
-        target="_blank"
-        rel="noopener"
-      >
-        I made you something else too 💌
-      </a>
+        </div>
 
     </div>
-
-  </div>
 
 </section>
 
 
 <footer>
-  made with a lot of love, a little chaos & probably too much pasta ♡
+    made with a lot of love, a little chaos & probably too much iced coffee ♡
 </footer>
 
 
@@ -1348,68 +1376,68 @@ footer {
 
 /* Scroll reveal */
 
-const reveals = document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver(
-  (entries) => {
+    (entries) => {
 
-    entries.forEach((entry) => {
+        entries.forEach((entry) => {
 
-      if (entry.isIntersecting) {
+            if (entry.isIntersecting) {
 
-        entry.target.classList.add("visible");
+                entry.target.classList.add("visible");
 
-        revealObserver.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
 
-      }
-
-    });
-
-  },
-  {
-    threshold: 0.12
-  }
-);
-
-reveals.forEach((element) => {
-  revealObserver.observe(element);
-});
-
-
-/* Polaroid animation */
-
-const photos = document.querySelectorAll(".photo");
-const wall = document.querySelector(".photo-wall");
-
-const photoObserver = new IntersectionObserver(
-  (entries) => {
-
-    entries.forEach((entry) => {
-
-      if (entry.isIntersecting) {
-
-        photos.forEach((photo, index) => {
-
-          setTimeout(() => {
-            photo.classList.add("show");
-          }, index * 180);
+            }
 
         });
 
-        photoObserver.disconnect();
-
-      }
-
-    });
-
-  },
-  {
-    threshold: 0.15
-  }
+    },
+    {
+        threshold: 0.12
+    }
 );
 
-if (wall) {
-  photoObserver.observe(wall);
+revealElements.forEach((element) => {
+    revealObserver.observe(element);
+});
+
+
+/* Polaroid entrance */
+
+const photoWall = document.querySelector(".photo-wall");
+const polaroids = document.querySelectorAll(".polaroid");
+
+const photoObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                polaroids.forEach((photo, index) => {
+
+                    setTimeout(() => {
+                        photo.classList.add("show");
+                    }, index * 180);
+
+                });
+
+                photoObserver.disconnect();
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+if (photoWall) {
+    photoObserver.observe(photoWall);
 }
 
 </script>
