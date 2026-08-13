@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>happy birthday my punnu ♡</title>
+<title>Happy Birthday, Punnu ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap" rel="stylesheet">
 
 <style>
+
 :root {
     --cream: #fcfaf7;
     --paper: #fffdfb;
@@ -45,8 +46,6 @@ body {
     overflow-x: hidden;
 }
 
-/* subtle paper texture */
-
 body::before {
     content: "";
     position: fixed;
@@ -59,9 +58,9 @@ body::before {
     background-size: 22px 22px;
 }
 
-/* --------------------------------------------------
+/* =========================
    DOODLES
--------------------------------------------------- */
+========================= */
 
 .doodle {
     position: absolute;
@@ -109,14 +108,116 @@ body::before {
     0%, 100% {
         transform: translateY(0) rotate(0deg);
     }
+
     50% {
         transform: translateY(-9px) rotate(4deg);
     }
 }
 
-/* --------------------------------------------------
+/* =========================
+   CANDLES
+========================= */
+
+.candle {
+    position: absolute;
+    z-index: 2;
+    width: 12px;
+    height: 62px;
+    border-radius: 5px 5px 3px 3px;
+    background: linear-gradient(
+        90deg,
+        #d9c8df,
+        #f0dce5,
+        #c9dce2
+    );
+    opacity: .72;
+    box-shadow:
+        inset 0 0 0 1px rgba(80,70,85,.08),
+        0 7px 18px rgba(100,80,100,.12);
+}
+
+.candle::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    background: #4c454c;
+    top: -10px;
+    left: 5px;
+}
+
+.flame {
+    position: absolute;
+    width: 15px;
+    height: 22px;
+    top: -31px;
+    left: -1.5px;
+    background: #f4c982;
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(2deg);
+    opacity: .85;
+    filter: blur(.2px);
+    box-shadow:
+        0 0 10px rgba(245,190,95,.55),
+        0 0 22px rgba(245,190,95,.25);
+    animation: flicker 1.15s ease-in-out infinite alternate;
+}
+
+.flame::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 11px;
+    background: #fff4d5;
+    border-radius: 50%;
+    left: 4px;
+    top: 7px;
+}
+
+@keyframes flicker {
+    0% {
+        transform: rotate(-4deg) scale(.92);
+        opacity: .7;
+    }
+
+    45% {
+        transform: rotate(4deg) scale(1.08);
+        opacity: .95;
+    }
+
+    100% {
+        transform: rotate(-2deg) scale(.98);
+        opacity: .78;
+    }
+}
+
+.candle-one {
+    left: 20%;
+    top: 35%;
+    transform: rotate(-8deg);
+}
+
+.candle-two {
+    right: 21%;
+    top: 33%;
+    transform: rotate(8deg);
+}
+
+.candle-three {
+    left: 27%;
+    top: 58%;
+    transform: rotate(-5deg) scale(.85);
+}
+
+.candle-four {
+    right: 28%;
+    top: 57%;
+    transform: rotate(5deg) scale(.85);
+}
+
+/* =========================
    HERO
--------------------------------------------------- */
+========================= */
 
 .hero {
     min-height: 100vh;
@@ -129,9 +230,18 @@ body::before {
     overflow: hidden;
     padding: 40px 20px;
     border-bottom: 1px solid var(--soft-line);
+
     background:
-        radial-gradient(circle at 15% 20%, rgba(231,223,240,.75), transparent 30%),
-        radial-gradient(circle at 87% 75%, rgba(220,233,237,.72), transparent 32%),
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(231,223,240,.75),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 87% 75%,
+            rgba(220,233,237,.72),
+            transparent 32%
+        ),
         var(--cream);
 }
 
@@ -178,21 +288,28 @@ body::before {
     }
 }
 
+/* CHANGED: opening text */
+
 .hero h1 {
-    font-family: "Italianno", cursive;
-    font-size: clamp(6rem, 15vw, 10rem);
-    font-weight: 400;
-    line-height: .72;
+    font-family: "Caveat", cursive;
+    font-size: clamp(4.6rem, 12vw, 7.8rem);
+    font-weight: 600;
+    line-height: .82;
     color: #403944;
     letter-spacing: .01em;
     text-shadow: 0 3px 0 rgba(255,255,255,.75);
+    text-transform: lowercase;
 }
 
 .hero-sub {
     margin-top: 34px;
+
+    /* cute + minimal handwritten font */
     font-family: "Caveat", cursive;
-    font-size: clamp(1.65rem, 4vw, 2.35rem);
-    color: var(--lavender-deep);
+    font-size: clamp(1.55rem, 4vw, 2rem);
+    font-weight: 500;
+    color: #786986;
+    letter-spacing: .02em;
 }
 
 .open-button {
@@ -224,19 +341,7 @@ body::before {
     font-size: 18px;
 }
 
-/* hero doodle positions */
-
-.hero-cake1 {
-    left: 12%;
-    top: 26%;
-    transform: rotate(-8deg);
-}
-
-.hero-cake2 {
-    right: 12%;
-    top: 24%;
-    transform: rotate(8deg);
-}
+/* hero doodles */
 
 .hero-heart1 {
     left: 19%;
@@ -268,9 +373,9 @@ body::before {
     top: 19%;
 }
 
-/* --------------------------------------------------
+/* =========================
    GENERAL
--------------------------------------------------- */
+========================= */
 
 section {
     position: relative;
@@ -296,9 +401,9 @@ section {
     transform: translateY(0);
 }
 
-/* --------------------------------------------------
+/* =========================
    LOVE
--------------------------------------------------- */
+========================= */
 
 .love {
     text-align: center;
@@ -333,14 +438,22 @@ section {
     color: var(--pink-deep);
 }
 
-/* --------------------------------------------------
+/* =========================
    LITTLE THINGS
--------------------------------------------------- */
+========================= */
 
 .things {
     background:
-        radial-gradient(circle at 15% 25%, rgba(239,221,228,.7), transparent 28%),
-        radial-gradient(circle at 85% 65%, rgba(220,233,237,.75), transparent 31%),
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(239,221,228,.7),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 65%,
+            rgba(220,233,237,.75),
+            transparent 31%
+        ),
         linear-gradient(135deg, #f8f4f3, #ebe5ef);
 }
 
@@ -364,8 +477,6 @@ section {
     font-size: 24px;
     color: var(--muted);
 }
-
-/* hanging cards */
 
 .hanging-wall {
     max-width: 1000px;
@@ -486,8 +597,6 @@ section {
     --rotation: -5deg;
 }
 
-/* bird decorations */
-
 .wall-bird1 {
     left: 7%;
     top: 60px;
@@ -513,24 +622,9 @@ section {
     bottom: 50px;
 }
 
-/* --------------------------------------------------
-   RANDOM DOODLE LAYER
--------------------------------------------------- */
-
-.doodle-field {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.doodle-field span {
-    position: absolute;
-}
-
-/* --------------------------------------------------
+/* =========================
    BOUQUET
--------------------------------------------------- */
+========================= */
 
 .bouquet {
     background: var(--paper);
@@ -582,9 +676,9 @@ section {
     color: #77707a;
 }
 
-/* --------------------------------------------------
+/* =========================
    MEMORIES
--------------------------------------------------- */
+========================= */
 
 .memories {
     background:
@@ -740,18 +834,27 @@ section {
     --rotation: -6deg;
 }
 
-/* --------------------------------------------------
-   FINAL LETTER
--------------------------------------------------- */
+/* =========================
+   FINAL
+========================= */
 
 .final {
     min-height: 95vh;
     display: flex;
     align-items: center;
     text-align: center;
+
     background:
-        radial-gradient(circle at 20% 25%, rgba(231,223,240,.6), transparent 28%),
-        radial-gradient(circle at 80% 70%, rgba(239,221,228,.55), transparent 28%),
+        radial-gradient(
+            circle at 20% 25%,
+            rgba(231,223,240,.6),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(239,221,228,.55),
+            transparent 28%
+        ),
         var(--paper);
 }
 
@@ -769,11 +872,13 @@ section {
     margin-bottom: 38px;
 }
 
+/* CHANGED: smaller final heading */
+
 .final h2 {
     font-family: "Italianno", cursive;
-    font-size: clamp(5.5rem, 13vw, 9rem);
+    font-size: clamp(4.5rem, 10vw, 7rem);
     font-weight: 400;
-    line-height: .72;
+    line-height: .78;
     color: #403944;
 }
 
@@ -840,9 +945,9 @@ footer {
     color: #89818b;
 }
 
-/* --------------------------------------------------
+/* =========================
    MOBILE
--------------------------------------------------- */
+========================= */
 
 @media (max-width: 700px) {
 
@@ -851,21 +956,26 @@ footer {
     }
 
     .hero h1 {
-        font-size: clamp(5.4rem, 21vw, 7rem);
+        font-size: clamp(4.2rem, 18vw, 6rem);
     }
 
     .hero-sub {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    .hero-cake1 {
-        left: 6%;
-        top: 25%;
+    .candle-one {
+        left: 11%;
+        top: 32%;
     }
 
-    .hero-cake2 {
-        right: 6%;
-        top: 25%;
+    .candle-two {
+        right: 11%;
+        top: 32%;
+    }
+
+    .candle-three,
+    .candle-four {
+        display: none;
     }
 
     .hero-bird1,
@@ -951,17 +1061,18 @@ footer {
     }
 
     .hero h1 {
-        font-size: 5rem;
+        font-size: 4.6rem;
     }
 
     .hero-sub {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
     }
 
     .final h2 {
-        font-size: 5.5rem;
+        font-size: 5rem;
     }
 }
+
 </style>
 </head>
 
@@ -974,29 +1085,61 @@ footer {
 
 <header class="hero">
 
-    <!-- subtle birthday doodles -->
+    <!-- soft candle doodles behind the birthday text -->
 
-    <div class="doodle heart-doodle hero-heart1 floating">♡</div>
-    <div class="doodle heart-doodle hero-heart2 floating">♡</div>
+    <div class="candle candle-one">
+        <div class="flame"></div>
+    </div>
 
-    <div class="doodle sparkle-doodle hero-star1 floating">✦</div>
-    <div class="doodle sparkle-doodle hero-star2 floating">✧</div>
+    <div class="candle candle-two">
+        <div class="flame"></div>
+    </div>
 
-    <div class="doodle bird-doodle hero-bird1 floating">𓅪</div>
-    <div class="doodle bird-doodle hero-bird2 floating">𓅪</div>
+    <div class="candle candle-three">
+        <div class="flame"></div>
+    </div>
 
-    <div class="doodle food-doodle hero-cake1 floating">🎂</div>
-    <div class="doodle food-doodle hero-cake2 floating">🎂</div>
+    <div class="candle candle-four">
+        <div class="flame"></div>
+    </div>
+
+
+    <!-- visible but subtle doodles -->
+
+    <div class="doodle heart-doodle hero-heart1 floating">
+        ♡
+    </div>
+
+    <div class="doodle heart-doodle hero-heart2 floating">
+        ♡
+    </div>
+
+    <div class="doodle sparkle-doodle hero-star1 floating">
+        ✦
+    </div>
+
+    <div class="doodle sparkle-doodle hero-star2 floating">
+        ✧
+    </div>
+
+    <div class="doodle bird-doodle hero-bird1 floating">
+        𓅪
+    </div>
+
+    <div class="doodle bird-doodle hero-bird2 floating">
+        𓅪
+    </div>
+
 
     <div class="hero-inner">
 
         <h1>
-            Happy Birthday,<br>
-            Punnu.
+            happy birthday<br>
+            my punnu
         </h1>
 
         <div class="hero-sub">
-            it's our birthday hehe ♡
+            it’s our birthday hehe ♡
         </div>
 
         <a href="#love" class="open-button">
@@ -1021,22 +1164,34 @@ footer {
     <div class="doodle-field">
 
         <span class="doodle heart-doodle floating"
-              style="left:8%;top:18%;">♡</span>
+              style="left:8%;top:18%;">
+            ♡
+        </span>
 
         <span class="doodle sparkle-doodle floating"
-              style="right:9%;top:22%;">✦</span>
+              style="right:9%;top:22%;">
+            ✦
+        </span>
 
         <span class="doodle flower-doodle floating"
-              style="left:12%;bottom:20%;">✿</span>
+              style="left:12%;bottom:20%;">
+            ✿
+        </span>
 
         <span class="doodle bird-doodle floating"
-              style="right:15%;bottom:25%;">𓅪</span>
+              style="right:15%;bottom:25%;">
+            𓅪
+        </span>
 
         <span class="doodle food-doodle"
-              style="right:7%;bottom:15%;">🥑</span>
+              style="right:7%;bottom:15%;">
+            🥑
+        </span>
 
         <span class="doodle food-doodle"
-              style="left:7%;top:35%;">☕</span>
+              style="left:7%;top:35%;">
+            ☕
+        </span>
 
     </div>
 
@@ -1089,19 +1244,29 @@ footer {
         </span>
 
         <span class="doodle sparkle-doodle floating"
-              style="left:16%;top:28%;">✦</span>
+              style="left:16%;top:28%;">
+            ✦
+        </span>
 
         <span class="doodle sparkle-doodle floating"
-              style="right:17%;top:38%;">✧</span>
+              style="right:17%;top:38%;">
+            ✧
+        </span>
 
         <span class="doodle food-doodle"
-              style="left:4%;top:57%;">🍝</span>
+              style="left:4%;top:57%;">
+            🍝
+        </span>
 
         <span class="doodle food-doodle"
-              style="right:5%;top:66%;">🥑</span>
+              style="right:5%;top:66%;">
+            🥑
+        </span>
 
         <span class="doodle food-doodle"
-              style="left:10%;bottom:15%;">☕</span>
+              style="left:10%;bottom:15%;">
+            ☕
+        </span>
 
     </div>
 
@@ -1123,8 +1288,6 @@ footer {
 
         <div class="hanging-wall">
 
-            <!-- CARD 1 -->
-
             <article class="hanging-card card1 reveal">
 
                 <h3 class="card-title">
@@ -1141,12 +1304,12 @@ footer {
                     (baaki mein sudhar deu)
                 </span>
 
-                <div class="card-symbol">♡</div>
+                <div class="card-symbol">
+                    ♡
+                </div>
 
             </article>
 
-
-            <!-- CARD 2 -->
 
             <article class="hanging-card card2 reveal">
 
@@ -1163,12 +1326,12 @@ footer {
                     (haan half of the times, extra dimag use karke nahi bhi aati)
                 </span>
 
-                <div class="card-symbol">✦</div>
+                <div class="card-symbol">
+                    ✦
+                </div>
 
             </article>
 
-
-            <!-- CARD 3 -->
 
             <article class="hanging-card card3 reveal">
 
@@ -1181,12 +1344,12 @@ footer {
                     forget about afterwards.
                 </p>
 
-                <div class="card-symbol">⌁</div>
+                <div class="card-symbol">
+                    ⌁
+                </div>
 
             </article>
 
-
-            <!-- CARD 4 -->
 
             <article class="hanging-card card4 reveal">
 
@@ -1199,12 +1362,12 @@ footer {
                     whether they're important or completely stupid.
                 </p>
 
-                <div class="card-symbol">♡</div>
+                <div class="card-symbol">
+                    ♡
+                </div>
 
             </article>
 
-
-            <!-- CARD 5 -->
 
             <article class="hanging-card card5 reveal">
 
@@ -1217,12 +1380,12 @@ footer {
                     with and completely myself around.
                 </p>
 
-                <div class="card-symbol">✿</div>
+                <div class="card-symbol">
+                    ✿
+                </div>
 
             </article>
 
-
-            <!-- CARD 6 -->
 
             <article class="hanging-card card6 reveal">
 
@@ -1235,7 +1398,9 @@ footer {
                     you mean to me.
                 </p>
 
-                <div class="card-symbol">⌂</div>
+                <div class="card-symbol">
+                    ⌂
+                </div>
 
             </article>
 
@@ -1255,16 +1420,24 @@ footer {
     <div class="doodle-field">
 
         <span class="doodle flower-doodle floating"
-              style="left:8%;top:18%;">✿</span>
+              style="left:8%;top:18%;">
+            ✿
+        </span>
 
         <span class="doodle flower-doodle floating"
-              style="right:8%;top:25%;">❀</span>
+              style="right:8%;top:25%;">
+            ❀
+        </span>
 
         <span class="doodle heart-doodle floating"
-              style="left:10%;bottom:20%;">♡</span>
+              style="left:10%;bottom:20%;">
+            ♡
+        </span>
 
         <span class="doodle sparkle-doodle floating"
-              style="right:12%;bottom:22%;">✦</span>
+              style="right:12%;bottom:22%;">
+            ✦
+        </span>
 
     </div>
 
@@ -1281,14 +1454,12 @@ footer {
 
 
         <!--
-            ADD YOUR BOUQUET IMAGE HERE.
+            BOUQUET IMAGE
 
-            Rename your image to:
+            Upload your bouquet image into the repository
+            and name it:
 
             bouquet.jpg
-
-            and upload it into the same repository
-            as this index.html file.
         -->
 
         <div class="bouquet-frame reveal">
@@ -1319,25 +1490,39 @@ footer {
     <div class="doodle-field">
 
         <span class="doodle heart-doodle floating"
-              style="left:6%;top:13%;">♡</span>
+              style="left:6%;top:13%;">
+            ♡
+        </span>
 
         <span class="doodle sparkle-doodle floating"
-              style="right:8%;top:20%;">✦</span>
+              style="right:8%;top:20%;">
+            ✦
+        </span>
 
         <span class="doodle bird-doodle floating"
-              style="left:14%;bottom:18%;">𓅪</span>
+              style="left:14%;bottom:18%;">
+            𓅪
+        </span>
 
         <span class="doodle flower-doodle floating"
-              style="right:10%;bottom:15%;">✿</span>
+              style="right:10%;bottom:15%;">
+            ✿
+        </span>
 
         <span class="doodle food-doodle"
-              style="left:5%;top:52%;">🍝</span>
+              style="left:5%;top:52%;">
+            🍝
+        </span>
 
         <span class="doodle food-doodle"
-              style="right:5%;top:48%;">☕</span>
+              style="right:5%;top:48%;">
+            ☕
+        </span>
 
         <span class="doodle food-doodle"
-              style="left:22%;bottom:10%;">🥑</span>
+              style="left:22%;bottom:10%;">
+            🥑
+        </span>
 
     </div>
 
@@ -1363,8 +1548,6 @@ footer {
             <div class="photo-thread thread6"></div>
 
 
-            <!-- PHOTO 1 -->
-
             <div class="polaroid photo1">
 
                 <div class="photo-clip"></div>
@@ -1378,8 +1561,6 @@ footer {
 
             </div>
 
-
-            <!-- PHOTO 2 -->
 
             <div class="polaroid photo2">
 
@@ -1395,8 +1576,6 @@ footer {
             </div>
 
 
-            <!-- PHOTO 3 -->
-
             <div class="polaroid photo3">
 
                 <div class="photo-clip"></div>
@@ -1410,8 +1589,6 @@ footer {
 
             </div>
 
-
-            <!-- PHOTO 4 -->
 
             <div class="polaroid photo4">
 
@@ -1427,8 +1604,6 @@ footer {
             </div>
 
 
-            <!-- PHOTO 5 -->
-
             <div class="polaroid photo5">
 
                 <div class="photo-clip"></div>
@@ -1442,8 +1617,6 @@ footer {
 
             </div>
 
-
-            <!-- PHOTO 6 -->
 
             <div class="polaroid photo6">
 
@@ -1474,34 +1647,54 @@ footer {
     <div class="doodle-field">
 
         <span class="doodle heart-doodle floating"
-              style="left:8%;top:18%;">♡</span>
+              style="left:8%;top:18%;">
+            ♡
+        </span>
 
         <span class="doodle heart-doodle floating"
-              style="right:9%;top:24%;">♡</span>
+              style="right:9%;top:24%;">
+            ♡
+        </span>
 
         <span class="doodle sparkle-doodle floating"
-              style="left:15%;bottom:20%;">✦</span>
+              style="left:15%;bottom:20%;">
+            ✦
+        </span>
 
         <span class="doodle sparkle-doodle floating"
-              style="right:13%;bottom:17%;">✧</span>
+              style="right:13%;bottom:17%;">
+            ✧
+        </span>
 
         <span class="doodle flower-doodle floating"
-              style="left:7%;bottom:35%;">✿</span>
+              style="left:7%;bottom:35%;">
+            ✿
+        </span>
 
         <span class="doodle bird-doodle floating"
-              style="right:8%;bottom:35%;">𓅪</span>
+              style="right:8%;bottom:35%;">
+            𓅪
+        </span>
 
         <span class="doodle food-doodle"
-              style="left:10%;top:43%;">☕</span>
+              style="left:10%;top:43%;">
+            ☕
+        </span>
 
         <span class="doodle food-doodle"
-              style="right:10%;top:47%;">🥑</span>
+              style="right:10%;top:47%;">
+            🥑
+        </span>
 
         <span class="doodle food-doodle"
-              style="left:24%;top:17%;">🍝</span>
+              style="left:24%;top:17%;">
+            🍝
+        </span>
 
         <span class="doodle food-doodle"
-              style="right:24%;top:15%;">🎂</span>
+              style="right:24%;top:15%;">
+            🎂
+        </span>
 
     </div>
 
@@ -1513,8 +1706,10 @@ footer {
         </div>
 
 
+        <!-- slightly smaller than before -->
+
         <h2>
-            Happiest birthday<br>
+            happiest birthday<br>
             my baby.
         </h2>
 
@@ -1522,6 +1717,10 @@ footer {
         <div class="final-letter">
 
             <div class="final-message">
+
+                <div class="heart-line">
+                    ♡ ✦ ♡ ✧ ♡
+                </div>
 
                 <p>
                     <strong>
@@ -1533,16 +1732,12 @@ footer {
                     My everything.
                 </p>
 
-                <div class="heart-line">
-                    ♡ ✦ ♡ ✧ ♡
-                </div>
-
                 <p>
                     I love you the most.
                 </p>
 
                 <p>
-                    Can’t do this life without you.
+                    I can’t do this life without you.
                 </p>
 
             </div>
@@ -1561,9 +1756,9 @@ footer {
 
 <script>
 
-/* -----------------------------
+/* =========================
    SCROLL REVEALS
------------------------------ */
+========================= */
 
 const reveals = document.querySelectorAll(".reveal");
 
@@ -1593,9 +1788,9 @@ reveals.forEach((element) => {
 });
 
 
-/* -----------------------------
+/* =========================
    POLAROID ANIMATION
------------------------------ */
+========================= */
 
 const photoWall = document.querySelector(".photo-wall");
 const photos = document.querySelectorAll(".polaroid");
@@ -1618,6 +1813,7 @@ if (photoWall) {
                     });
 
                     photoObserver.disconnect();
+
                 }
 
             });
