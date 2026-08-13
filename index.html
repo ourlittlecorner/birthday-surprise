@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Punnu ♡</title>
+<title>Happy Birthday, Punnu ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,19 +13,18 @@
 
 <style>
 :root {
-    --cream: #fbf8f4;
+    --cream: #fcfaf7;
     --paper: #fffdfb;
-    --lavender: #e4dcef;
-    --lavender-dark: #756582;
+    --lavender: #e7dff0;
+    --lavender-deep: #786986;
+    --pink: #efdde4;
+    --pink-deep: #a77f91;
     --blue: #dce9ed;
-    --blue-dark: #6d8790;
-    --pink: #ead5dc;
-    --pink-dark: #a27d8c;
-    --soft-yellow: #eee3c9;
+    --blue-deep: #6f8991;
     --ink: #29262d;
     --muted: #756e77;
-    --line: rgba(50, 45, 53, .22);
-    --shadow: rgba(42, 35, 48, .11);
+    --soft-line: rgba(50, 45, 53, .18);
+    --shadow: rgba(49, 42, 53, .12);
 }
 
 * {
@@ -46,7 +45,7 @@ body {
     overflow-x: hidden;
 }
 
-/* soft paper grain */
+/* subtle paper texture */
 
 body::before {
     content: "";
@@ -56,48 +55,68 @@ body::before {
     z-index: 100;
     opacity: .035;
     background-image:
-        radial-gradient(circle at 20% 30%, #000 .6px, transparent .8px),
-        radial-gradient(circle at 70% 70%, #000 .5px, transparent .8px);
-    background-size: 22px 22px, 29px 29px;
+        radial-gradient(circle, #000 .55px, transparent .7px);
+    background-size: 22px 22px;
 }
 
-/* background doodles */
+/* --------------------------------------------------
+   DOODLES
+-------------------------------------------------- */
 
-.page-doodle {
+.doodle {
     position: absolute;
     pointer-events: none;
-    color: var(--lavender-dark);
-    opacity: .18;
-    font-family: "Caveat", cursive;
     z-index: 1;
+    opacity: .17;
+    user-select: none;
 }
 
-.doodle-heart {
-    font-size: 48px;
+.heart-doodle {
+    font-family: "Caveat", cursive;
+    color: var(--pink-deep);
+    font-size: 50px;
 }
 
-.doodle-star {
-    font-size: 34px;
+.sparkle-doodle {
+    font-family: "Caveat", cursive;
+    color: var(--lavender-deep);
+    font-size: 38px;
 }
 
-.doodle-bird {
-    font-size: 29px;
+.flower-doodle {
+    font-family: "Caveat", cursive;
+    color: var(--pink-deep);
+    font-size: 43px;
 }
 
-.float {
-    animation: gentleFloat 6s ease-in-out infinite;
+.bird-doodle {
+    font-family: "Caveat", cursive;
+    color: var(--blue-deep);
+    font-size: 32px;
 }
 
-@keyframes gentleFloat {
-    0%,100% {
-        transform: translateY(0) rotate(0);
+.food-doodle {
+    font-size: 28px;
+    filter: grayscale(.15);
+    opacity: .13;
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
     }
     50% {
-        transform: translateY(-10px) rotate(5deg);
+        transform: translateY(-9px) rotate(4deg);
     }
 }
 
-/* HERO */
+/* --------------------------------------------------
+   HERO
+-------------------------------------------------- */
 
 .hero {
     min-height: 100vh;
@@ -108,37 +127,41 @@ body::before {
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    padding: 45px 20px;
-    border-bottom: 1px solid var(--line);
+    padding: 40px 20px;
+    border-bottom: 1px solid var(--soft-line);
+    background:
+        radial-gradient(circle at 15% 20%, rgba(231,223,240,.75), transparent 30%),
+        radial-gradient(circle at 87% 75%, rgba(220,233,237,.72), transparent 32%),
+        var(--cream);
 }
 
 .hero::before {
     content: "";
     position: absolute;
-    width: 520px;
-    height: 520px;
+    width: 430px;
+    height: 430px;
     border-radius: 50%;
-    background: var(--lavender);
-    opacity: .42;
-    top: -300px;
+    background: var(--pink);
+    opacity: .3;
+    top: -250px;
     right: -130px;
 }
 
 .hero::after {
     content: "";
     position: absolute;
-    width: 430px;
-    height: 430px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
-    background: var(--blue);
-    opacity: .43;
+    background: var(--lavender);
+    opacity: .3;
     bottom: -250px;
     left: -130px;
 }
 
 .hero-inner {
     position: relative;
-    z-index: 4;
+    z-index: 5;
     max-width: 900px;
     animation: heroIn 1.2s ease both;
 }
@@ -148,71 +171,46 @@ body::before {
         opacity: 0;
         transform: translateY(25px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.hero-cake {
-    font-size: 47px;
-    margin-bottom: 20px;
-    display: inline-block;
-    animation: cakeFloat 4s ease-in-out infinite;
-}
-
-@keyframes cakeFloat {
-    0%,100% {
-        transform: translateY(0) rotate(-2deg);
-    }
-    50% {
-        transform: translateY(-8px) rotate(2deg);
-    }
-}
-
 .hero h1 {
-    font-family: "Caveat", cursive;
-    font-size: clamp(5.2rem, 14vw, 9.5rem);
-    font-weight: 600;
-    line-height: .78;
-    letter-spacing: -.04em;
-    margin-bottom: 27px;
-    color: #312d34;
-    text-shadow: 0 3px 0 rgba(255,255,255,.7);
+    font-family: "Italianno", cursive;
+    font-size: clamp(6rem, 15vw, 10rem);
+    font-weight: 400;
+    line-height: .72;
+    color: #403944;
+    letter-spacing: .01em;
+    text-shadow: 0 3px 0 rgba(255,255,255,.75);
 }
 
 .hero-sub {
-    font-family: "Italianno", cursive;
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--lavender-dark);
-    margin-bottom: 35px;
-}
-
-.hero-sub::before,
-.hero-sub::after {
-    content: "✦";
+    margin-top: 34px;
     font-family: "Caveat", cursive;
-    font-size: .55em;
-    opacity: .45;
-    margin: 0 13px;
-    vertical-align: middle;
+    font-size: clamp(1.65rem, 4vw, 2.35rem);
+    color: var(--lavender-deep);
 }
 
 .open-button {
     display: inline-block;
-    padding: 12px 25px;
-    border: 1px solid var(--ink);
+    margin-top: 32px;
+    padding: 11px 24px;
+    border: 1px solid rgba(40,36,44,.55);
     border-radius: 100px;
     color: var(--ink);
+    background: rgba(255,255,255,.48);
     text-decoration: none;
-    font-size: 14px;
-    background: rgba(255,255,255,.55);
+    font-size: 13px;
     transition: .3s ease;
 }
 
 .open-button:hover {
     background: var(--ink);
-    color: #fff;
+    color: white;
     transform: translateY(-3px);
 }
 
@@ -222,16 +220,62 @@ body::before {
     left: 50%;
     transform: translateX(-50%);
     font-family: "Caveat", cursive;
-    font-size: 18px;
     color: var(--muted);
+    font-size: 18px;
 }
 
-/* GENERAL */
+/* hero doodle positions */
+
+.hero-cake1 {
+    left: 12%;
+    top: 26%;
+    transform: rotate(-8deg);
+}
+
+.hero-cake2 {
+    right: 12%;
+    top: 24%;
+    transform: rotate(8deg);
+}
+
+.hero-heart1 {
+    left: 19%;
+    bottom: 24%;
+}
+
+.hero-heart2 {
+    right: 18%;
+    bottom: 27%;
+}
+
+.hero-star1 {
+    left: 8%;
+    top: 17%;
+}
+
+.hero-star2 {
+    right: 9%;
+    bottom: 17%;
+}
+
+.hero-bird1 {
+    left: 29%;
+    top: 17%;
+}
+
+.hero-bird2 {
+    right: 29%;
+    top: 19%;
+}
+
+/* --------------------------------------------------
+   GENERAL
+-------------------------------------------------- */
 
 section {
-    padding: 120px 22px;
     position: relative;
     overflow: hidden;
+    padding: 120px 22px;
 }
 
 .container {
@@ -243,8 +287,8 @@ section {
     opacity: 0;
     transform: translateY(28px);
     transition:
-        opacity 1s ease,
-        transform 1s ease;
+        opacity .9s ease,
+        transform .9s ease;
 }
 
 .reveal.visible {
@@ -252,174 +296,169 @@ section {
     transform: translateY(0);
 }
 
-/* LOVE */
+/* --------------------------------------------------
+   LOVE
+-------------------------------------------------- */
 
 .love {
-    background: var(--paper);
     text-align: center;
+    background: var(--paper);
 }
 
 .love-inner {
-    max-width: 850px;
-    margin: auto;
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    max-width: 820px;
+    margin: auto;
 }
 
 .love-heading {
     font-family: "Italianno", cursive;
-    font-size: clamp(4.5rem, 10vw, 7.5rem);
+    font-size: clamp(5rem, 11vw, 8rem);
     font-weight: 400;
-    line-height: .85;
-    color: #4c4650;
-    margin-bottom: 25px;
+    line-height: .82;
+    color: #4b4450;
 }
 
 .love-text {
+    margin-top: 30px;
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.5rem, 3vw, 2.05rem);
+    font-size: clamp(1.45rem, 3vw, 2rem);
     color: var(--muted);
 }
 
 .love-heart {
-    font-size: 27px;
-    color: var(--pink-dark);
-    margin-top: 27px;
-    animation: heartbeat 2.8s ease-in-out infinite;
+    margin-top: 25px;
+    font-size: 25px;
+    color: var(--pink-deep);
 }
 
-@keyframes heartbeat {
-    0%,100% { transform: scale(1); }
-    10% { transform: scale(1.13); }
-    20% { transform: scale(1); }
-}
-
-/* LITTLE THINGS */
+/* --------------------------------------------------
+   LITTLE THINGS
+-------------------------------------------------- */
 
 .things {
     background:
-        linear-gradient(
-            135deg,
-            #faf7f4 0%,
-            #eee8f2 48%,
-            #e6eef0 100%
-        );
+        radial-gradient(circle at 15% 25%, rgba(239,221,228,.7), transparent 28%),
+        radial-gradient(circle at 85% 65%, rgba(220,233,237,.75), transparent 31%),
+        linear-gradient(135deg, #f8f4f3, #ebe5ef);
 }
 
 .things-heading {
-    max-width: 750px;
-    margin: auto;
     text-align: center;
     position: relative;
-    z-index: 2;
-}
-
-.script-label {
-    font-family: "Caveat", cursive;
-    font-size: 25px;
-    color: var(--lavender-dark);
+    z-index: 4;
 }
 
 .things-heading h2 {
     font-family: "Italianno", cursive;
+    font-size: clamp(4.7rem, 10vw, 7.5rem);
     font-weight: 400;
-    font-size: clamp(4rem, 9vw, 7rem);
-    line-height: .85;
-    color: #48414d;
-    margin-top: 6px;
+    line-height: .82;
+    color: #4b4450;
 }
 
 .things-heading p {
+    margin-top: 20px;
     font-family: "Caveat", cursive;
     font-size: 24px;
     color: var(--muted);
-    margin-top: 20px;
 }
 
-/* hanging memory wall */
+/* hanging cards */
 
 .hanging-wall {
     max-width: 1000px;
-    margin: 80px auto 0;
+    margin: 85px auto 0;
+    min-height: 680px;
     position: relative;
-    min-height: 650px;
 }
 
 .hanging-card {
     position: absolute;
-    width: 250px;
-    padding: 12px 12px 25px;
-    background: #fffdf9;
-    box-shadow: 0 18px 38px var(--shadow);
-    border: 1px solid rgba(30,25,35,.08);
+    width: 260px;
+    padding: 30px 24px 28px;
+    background: var(--paper);
+    border: 1px solid rgba(55,48,60,.12);
+    box-shadow: 0 18px 40px var(--shadow);
     transform: rotate(var(--rotation));
-    transition:
-        transform .45s ease,
-        box-shadow .45s ease;
     z-index: 3;
+    transition: .45s ease;
+}
+
+.hanging-card::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--pink);
+    border: 1px solid rgba(70,60,68,.2);
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hanging-card::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 105px;
+    background: rgba(60,55,62,.4);
+    left: 50%;
+    top: -105px;
 }
 
 .hanging-card:hover {
-    transform: translateY(-10px) rotate(0deg) scale(1.03);
-    box-shadow: 0 25px 50px rgba(42,35,48,.16);
+    transform: translateY(-12px) rotate(0deg) scale(1.03);
+    box-shadow: 0 27px 52px rgba(45,38,48,.17);
     z-index: 8;
-}
-
-.hanging-string {
-    position: absolute;
-    width: 1px;
-    height: 125px;
-    background: rgba(61,55,63,.42);
-    left: 50%;
-    top: -125px;
-}
-
-.hanging-clip {
-    position: absolute;
-    top: -11px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 24px;
-    height: 31px;
-    border: 2px solid #655f67;
-    border-radius: 5px;
-    background: #e1d3b7;
 }
 
 .card-title {
     font-family: "Caveat", cursive;
-    font-size: 31px;
-    line-height: 1;
-    color: #504956;
-    margin: 5px 5px 10px;
+    font-size: 30px;
+    line-height: 1.02;
+    color: #4c4650;
+    margin-bottom: 13px;
 }
 
 .card-text {
     font-family: "Cormorant Garamond", serif;
-    font-size: 17px;
-    line-height: 1.35;
-    color: #69636b;
-    margin: 0 5px;
+    font-size: 18px;
+    line-height: 1.42;
+    color: #68616a;
 }
 
-.card-doodle {
+.card-aside {
+    display: block;
+    margin-top: 9px;
+    font-family: "Caveat", cursive;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #9b8c98;
+    opacity: .58;
+}
+
+.card-symbol {
     position: absolute;
-    right: 14px;
-    bottom: 8px;
+    bottom: 10px;
+    right: 15px;
+    color: var(--pink-deep);
+    opacity: .55;
     font-family: "Caveat", cursive;
     font-size: 23px;
-    opacity: .55;
 }
 
 .card1 {
     left: 3%;
-    top: 135px;
+    top: 150px;
     --rotation: -5deg;
 }
 
 .card2 {
     left: 27%;
-    top: 25px;
+    top: 35px;
     --rotation: 3deg;
 }
 
@@ -431,126 +470,67 @@ section {
 
 .card4 {
     right: 3%;
-    top: 145px;
+    top: 160px;
     --rotation: 5deg;
 }
 
 .card5 {
     left: 15%;
-    top: 390px;
+    top: 425px;
     --rotation: 4deg;
 }
 
 .card6 {
     right: 15%;
-    top: 385px;
+    top: 415px;
     --rotation: -5deg;
 }
 
-/* bird doodles */
+/* bird decorations */
 
-.bird {
-    position: absolute;
-    font-family: "Caveat", cursive;
-    color: var(--blue-dark);
-    opacity: .32;
-    font-size: 30px;
-    z-index: 1;
-    animation: birdFloat 5s ease-in-out infinite;
-}
-
-.bird1 {
-    left: 8%;
+.wall-bird1 {
+    left: 7%;
     top: 60px;
 }
 
-.bird2 {
-    right: 10%;
-    top: 30px;
-    animation-delay: 1s;
+.wall-bird2 {
+    right: 8%;
+    top: 40px;
 }
 
-.bird3 {
-    left: 42%;
-    top: 330px;
-    animation-delay: 1.7s;
+.wall-bird3 {
+    left: 43%;
+    top: 360px;
 }
 
-.bird4 {
-    right: 6%;
-    bottom: 30px;
-    animation-delay: 2.4s;
-}
-
-@keyframes birdFloat {
-    0%,100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-9px) translateX(5px);
-    }
-}
-
-/* little decorations */
-
-.things-decoration {
-    position: absolute;
-    opacity: .17;
-    color: var(--pink-dark);
-    font-family: "Caveat", cursive;
-}
-
-.decor1 {
-    left: 5%;
-    top: 18%;
-    font-size: 65px;
-}
-
-.decor2 {
+.wall-flower1 {
     right: 5%;
-    top: 45%;
-    font-size: 75px;
+    bottom: 25px;
 }
 
-.decor3 {
-    left: 7%;
-    bottom: 10%;
-    font-size: 50px;
+.wall-heart1 {
+    left: 4%;
+    bottom: 50px;
 }
 
-/* DOODLE STRIP */
+/* --------------------------------------------------
+   RANDOM DOODLE LAYER
+-------------------------------------------------- */
 
-.doodle-strip {
-    background: #e8e1ed;
-    border-top: 1px solid rgba(45,42,47,.12);
-    border-bottom: 1px solid rgba(45,42,47,.12);
-    padding: 28px 18px;
+.doodle-field {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.doodle-line {
-    max-width: 850px;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 18px;
+.doodle-field span {
+    position: absolute;
 }
 
-.doodle {
-    text-align: center;
-    font-family: "Caveat", cursive;
-    font-size: 18px;
-    color: #69616c;
-    opacity: .72;
-}
-
-.doodle-icon {
-    display: block;
-    font-size: 28px;
-    margin-bottom: 1px;
-}
-
-/* FLOWERS */
+/* --------------------------------------------------
+   BOUQUET
+-------------------------------------------------- */
 
 .bouquet {
     background: var(--paper);
@@ -559,62 +539,62 @@ section {
 
 .bouquet-heading {
     font-family: "Italianno", cursive;
-    font-size: clamp(4rem, 9vw, 6.8rem);
+    font-size: clamp(4.8rem, 10vw, 7.2rem);
     font-weight: 400;
-    line-height: .85;
-    color: #514a55;
+    line-height: .82;
+    color: #4b4450;
 }
 
 .bouquet-sub {
-    margin-top: 22px;
+    margin-top: 18px;
     font-family: "Caveat", cursive;
-    font-size: 25px;
-    color: var(--muted);
+    font-size: 27px;
+    color: var(--lavender-deep);
 }
 
 .bouquet-frame {
     max-width: 720px;
-    margin: 50px auto 0;
+    margin: 55px auto 0;
     padding: 12px;
-    background: #f5f0e9;
-    border: 1px solid var(--line);
+    background: #f2ecef;
+    border: 1px solid var(--soft-line);
     box-shadow: 0 22px 50px var(--shadow);
 }
 
 .bouquet-photo {
+    display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    display: block;
-    background: linear-gradient(
-        135deg,
-        #e7ddef,
-        #dce9ed
-    );
-}
-
-.bouquet-caption {
-    font-family: "Caveat", cursive;
-    font-size: 21px;
-    padding: 13px 5px 7px;
-    color: #706873;
-}
-
-/* MEMORIES */
-
-.memories {
     background:
         linear-gradient(
-            145deg,
-            #e8e0ee,
-            #e0ebee
+            135deg,
+            #e7dff0,
+            #efdde4,
+            #dce9ed
         );
 }
 
+.bouquet-caption {
+    padding: 12px 5px 5px;
+    font-family: "Caveat", cursive;
+    font-size: 21px;
+    color: #77707a;
+}
+
+/* --------------------------------------------------
+   MEMORIES
+-------------------------------------------------- */
+
+.memories {
+    background:
+        linear-gradient(145deg, #e8e0ee, #e2ecee);
+}
+
 .memories-head {
-    text-align: center;
-    max-width: 850px;
+    max-width: 900px;
     margin: auto;
+    text-align: center;
 }
 
 .memories-head h2 {
@@ -622,17 +602,8 @@ section {
     font-size: clamp(4rem, 8vw, 6.5rem);
     font-weight: 400;
     line-height: .9;
-    color: #4e4854;
+    color: #4d4653;
 }
-
-.memories-head p {
-    font-family: "Caveat", cursive;
-    font-size: 25px;
-    color: #6c6570;
-    margin-top: 17px;
-}
-
-/* photos */
 
 .photo-wall {
     max-width: 980px;
@@ -643,10 +614,10 @@ section {
 
 .photo-thread {
     position: absolute;
-    top: 0;
     width: 1px;
     height: 165px;
-    background: rgba(65,59,67,.42);
+    background: rgba(65,59,67,.38);
+    top: 0;
 }
 
 .thread1 {
@@ -688,6 +659,7 @@ section {
     background: #fffefa;
     box-shadow: 0 18px 38px rgba(35,31,38,.14);
     opacity: 0;
+    transform: translateY(20px) rotate(var(--rotation));
     transition:
         opacity .8s ease,
         transform .8s ease;
@@ -699,7 +671,7 @@ section {
 }
 
 .polaroid:hover {
-    transform: translateY(-10px) rotate(0) scale(1.04);
+    transform: translateY(-10px) rotate(0deg) scale(1.04);
     z-index: 5;
 }
 
@@ -708,16 +680,7 @@ section {
     height: 210px;
     object-fit: cover;
     display: block;
-    background: #ddd;
-}
-
-.polaroid-caption {
-    position: absolute;
-    left: 13px;
-    bottom: 6px;
-    font-family: "Caveat", cursive;
-    font-size: 18px;
-    color: #656068;
+    background: #e7dff0;
 }
 
 .photo-clip {
@@ -730,6 +693,15 @@ section {
     border: 2px solid #5b555d;
     border-radius: 5px;
     background: #dbc7a4;
+}
+
+.polaroid-caption {
+    position: absolute;
+    bottom: 5px;
+    left: 13px;
+    font-family: "Caveat", cursive;
+    font-size: 18px;
+    color: #656068;
 }
 
 .photo1 {
@@ -768,75 +740,109 @@ section {
     --rotation: -6deg;
 }
 
-/* FINAL */
+/* --------------------------------------------------
+   FINAL LETTER
+-------------------------------------------------- */
 
 .final {
-    min-height: 92vh;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     text-align: center;
-    background: var(--paper);
+    background:
+        radial-gradient(circle at 20% 25%, rgba(231,223,240,.6), transparent 28%),
+        radial-gradient(circle at 80% 70%, rgba(239,221,228,.55), transparent 28%),
+        var(--paper);
 }
 
 .final-inner {
     max-width: 850px;
     margin: auto;
     position: relative;
-    z-index: 2;
-}
-
-.final-small {
-    font-family: "Caveat", cursive;
-    font-size: 25px;
-    color: var(--lavender-dark);
+    z-index: 3;
 }
 
 .home-line {
     font-family: "Italianno", cursive;
-    font-size: clamp(2.8rem, 7vw, 4.8rem);
-    color: #81718b;
-    margin: 25px 0 35px;
+    font-size: clamp(3.2rem, 7vw, 5rem);
+    color: #82718c;
+    margin-bottom: 38px;
 }
 
 .final h2 {
+    font-family: "Italianno", cursive;
+    font-size: clamp(5.5rem, 13vw, 9rem);
+    font-weight: 400;
+    line-height: .72;
+    color: #403944;
+}
+
+.final-letter {
+    margin: 42px auto 0;
+    max-width: 680px;
+    padding: 35px 30px;
+    background: #f7edf1;
+    border: 1px solid rgba(86,67,78,.15);
+    box-shadow: 0 20px 45px var(--shadow);
+    position: relative;
+}
+
+.final-letter::before,
+.final-letter::after {
+    content: "♡";
+    position: absolute;
     font-family: "Caveat", cursive;
-    font-size: clamp(4.5rem, 11vw, 7.5rem);
-    font-weight: 600;
-    line-height: .82;
-    color: #433d47;
+    font-size: 28px;
+    color: var(--pink-deep);
+    opacity: .55;
+}
+
+.final-letter::before {
+    top: 11px;
+    left: 16px;
+}
+
+.final-letter::after {
+    bottom: 8px;
+    right: 16px;
 }
 
 .final-message {
-    margin-top: 35px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    color: #69616c;
-    line-height: 1.55;
+    font-family: "Caveat", cursive;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    color: #5f5862;
+    line-height: 1.3;
+}
+
+.final-message p {
+    margin: 7px 0;
 }
 
 .final-message strong {
-    color: var(--ink);
     font-weight: 600;
+    color: #403944;
 }
 
 .heart-line {
-    margin: 25px 0;
+    margin: 20px 0;
     font-size: 23px;
-    letter-spacing: 12px;
-    color: var(--pink-dark);
-    opacity: .75;
+    letter-spacing: 10px;
+    color: var(--pink-deep);
+    opacity: .65;
 }
 
 footer {
     text-align: center;
     background: var(--paper);
-    padding: 20px 20px 40px;
+    padding: 20px 20px 42px;
     font-family: "Caveat", cursive;
     font-size: 19px;
-    color: #8b838d;
+    color: #89818b;
 }
 
-/* mobile */
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
 
 @media (max-width: 700px) {
 
@@ -845,19 +851,34 @@ footer {
     }
 
     .hero h1 {
-        font-size: clamp(4.8rem, 19vw, 6.5rem);
+        font-size: clamp(5.4rem, 21vw, 7rem);
     }
 
     .hero-sub {
-        font-size: 2.25rem;
+        font-size: 2rem;
+    }
+
+    .hero-cake1 {
+        left: 6%;
+        top: 25%;
+    }
+
+    .hero-cake2 {
+        right: 6%;
+        top: 25%;
+    }
+
+    .hero-bird1,
+    .hero-bird2 {
+        display: none;
     }
 
     .hanging-wall {
         min-height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 35px 14px;
-        padding: 20px 5px;
+        gap: 38px 14px;
+        padding: 25px 3px;
     }
 
     .hanging-card {
@@ -866,10 +887,10 @@ footer {
         left: auto;
         right: auto;
         top: auto;
-        padding: 10px 10px 22px;
+        padding: 28px 17px 24px;
     }
 
-    .hanging-string {
+    .hanging-card::after {
         display: none;
     }
 
@@ -878,22 +899,22 @@ footer {
     }
 
     .card-text {
-        font-size: 16px;
+        font-size: 17px;
     }
 
-    .bird {
+    .wall-bird1,
+    .wall-bird2,
+    .wall-bird3,
+    .wall-heart1,
+    .wall-flower1 {
         display: none;
-    }
-
-    .doodle-line {
-        flex-wrap: wrap;
     }
 
     .photo-wall {
         min-height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 28px 13px;
+        gap: 30px 13px;
     }
 
     .photo-thread {
@@ -906,7 +927,6 @@ footer {
         left: auto;
         right: auto;
         top: auto;
-        padding: 7px 7px 28px;
     }
 
     .polaroid img {
@@ -920,14 +940,10 @@ footer {
 
 @media (max-width: 430px) {
 
-    .hanging-wall {
-        grid-template-columns: 1fr;
-        max-width: 290px;
-    }
-
+    .hanging-wall,
     .photo-wall {
         grid-template-columns: 1fr;
-        max-width: 290px;
+        max-width: 295px;
     }
 
     .polaroid img {
@@ -935,11 +951,15 @@ footer {
     }
 
     .hero h1 {
-        font-size: 4.7rem;
+        font-size: 5rem;
     }
 
     .hero-sub {
-        font-size: 2rem;
+        font-size: 1.9rem;
+    }
+
+    .final h2 {
+        font-size: 5.5rem;
     }
 }
 </style>
@@ -947,25 +967,28 @@ footer {
 
 <body>
 
-<!-- HERO -->
+
+<!-- =========================
+     OPENING
+========================= -->
 
 <header class="hero">
 
-    <span class="page-doodle doodle-heart float"
-          style="left:9%;top:19%;">♡</span>
+    <!-- subtle birthday doodles -->
 
-    <span class="page-doodle doodle-star float"
-          style="right:12%;top:24%;">✦</span>
+    <div class="doodle heart-doodle hero-heart1 floating">♡</div>
+    <div class="doodle heart-doodle hero-heart2 floating">♡</div>
 
-    <span class="page-doodle doodle-bird float"
-          style="left:15%;bottom:23%;">𓅪</span>
+    <div class="doodle sparkle-doodle hero-star1 floating">✦</div>
+    <div class="doodle sparkle-doodle hero-star2 floating">✧</div>
 
-    <span class="page-doodle doodle-heart float"
-          style="right:10%;bottom:18%;">♡</span>
+    <div class="doodle bird-doodle hero-bird1 floating">𓅪</div>
+    <div class="doodle bird-doodle hero-bird2 floating">𓅪</div>
+
+    <div class="doodle food-doodle hero-cake1 floating">🎂</div>
+    <div class="doodle food-doodle hero-cake2 floating">🎂</div>
 
     <div class="hero-inner">
-
-        <div class="hero-cake">🎂</div>
 
         <h1>
             Happy Birthday,<br>
@@ -989,18 +1012,33 @@ footer {
 </header>
 
 
-<!-- LOVE -->
+<!-- =========================
+     LOVE
+========================= -->
 
 <section class="love" id="love">
 
-    <span class="page-doodle doodle-heart float"
-          style="left:8%;top:15%;">♡</span>
+    <div class="doodle-field">
 
-    <span class="page-doodle doodle-star float"
-          style="right:9%;bottom:18%;">✦</span>
+        <span class="doodle heart-doodle floating"
+              style="left:8%;top:18%;">♡</span>
 
-    <span class="page-doodle doodle-bird float"
-          style="right:17%;top:23%;">𓅪</span>
+        <span class="doodle sparkle-doodle floating"
+              style="right:9%;top:22%;">✦</span>
+
+        <span class="doodle flower-doodle floating"
+              style="left:12%;bottom:20%;">✿</span>
+
+        <span class="doodle bird-doodle floating"
+              style="right:15%;bottom:25%;">𓅪</span>
+
+        <span class="doodle food-doodle"
+              style="right:7%;bottom:15%;">🥑</span>
+
+        <span class="doodle food-doodle"
+              style="left:7%;top:35%;">☕</span>
+
+    </div>
 
     <div class="love-inner reveal">
 
@@ -1022,29 +1060,57 @@ footer {
 </section>
 
 
-<!-- LITTLE THINGS -->
+<!-- =========================
+     LITTLE THINGS
+========================= -->
 
 <section class="things">
 
-    <span class="things-decoration decor1">♡</span>
-    <span class="things-decoration decor2">✦</span>
-    <span class="things-decoration decor3">♡</span>
+    <div class="doodle-field">
 
-    <span class="bird bird1">𓅪</span>
-    <span class="bird bird2">𓅪</span>
-    <span class="bird bird3">𓅪</span>
-    <span class="bird bird4">𓅪</span>
+        <span class="doodle bird-doodle wall-bird1 floating">
+            𓅪
+        </span>
+
+        <span class="doodle bird-doodle wall-bird2 floating">
+            𓅪
+        </span>
+
+        <span class="doodle bird-doodle wall-bird3 floating">
+            𓅪
+        </span>
+
+        <span class="doodle flower-doodle wall-flower1 floating">
+            ✿
+        </span>
+
+        <span class="doodle heart-doodle wall-heart1 floating">
+            ♡
+        </span>
+
+        <span class="doodle sparkle-doodle floating"
+              style="left:16%;top:28%;">✦</span>
+
+        <span class="doodle sparkle-doodle floating"
+              style="right:17%;top:38%;">✧</span>
+
+        <span class="doodle food-doodle"
+              style="left:4%;top:57%;">🍝</span>
+
+        <span class="doodle food-doodle"
+              style="right:5%;top:66%;">🥑</span>
+
+        <span class="doodle food-doodle"
+              style="left:10%;bottom:15%;">☕</span>
+
+    </div>
 
     <div class="container">
 
         <div class="things-heading reveal">
 
-            <div class="script-label">
-                little pieces of my heart ♡
-            </div>
-
             <h2>
-                things i love<br>
+                little things i love<br>
                 about you.
             </h2>
 
@@ -1061,20 +1127,21 @@ footer {
 
             <article class="hanging-card card1 reveal">
 
-                <div class="hanging-string"></div>
-                <div class="hanging-clip"></div>
-
                 <h3 class="card-title">
                     you're the most caring person ever.
                 </h3>
 
                 <p class="card-text">
-                    You think of yourself later and everyone else first —
-                    which I almost always hate about you 😭 — but I think
+                    you think of yourself later and everyone else first,
+                    which i almost always hate about you; but I think
                     that's also what makes you, you.
                 </p>
 
-                <div class="card-doodle">♡</div>
+                <span class="card-aside">
+                    (baaki mein sudhar deu)
+                </span>
+
+                <div class="card-symbol">♡</div>
 
             </article>
 
@@ -1083,19 +1150,20 @@ footer {
 
             <article class="hanging-card card2 reveal">
 
-                <div class="hanging-string"></div>
-                <div class="hanging-clip"></div>
-
                 <h3 class="card-title">
-                    you always show up.
+                    you are always there for me.
                 </h3>
 
                 <p class="card-text">
-                    Somehow, no matter what is happening, you always manage
-                    to be there when I need you.
+                    somehow, no matter what is happening, you always
+                    manage to be there when i need you.
                 </p>
 
-                <div class="card-doodle">✦</div>
+                <span class="card-aside">
+                    (haan half of the times, extra dimag use karke nahi bhi aati)
+                </span>
+
+                <div class="card-symbol">✦</div>
 
             </article>
 
@@ -1104,19 +1172,16 @@ footer {
 
             <article class="hanging-card card3 reveal">
 
-                <div class="hanging-string"></div>
-                <div class="hanging-clip"></div>
-
                 <h3 class="card-title">
                     you remember everything.
                 </h3>
 
                 <p class="card-text">
-                    Even the tiny things I casually mention and completely
+                    even the tiny things i casually mention and completely
                     forget about afterwards.
                 </p>
 
-                <div class="card-doodle">⌁</div>
+                <div class="card-symbol">⌁</div>
 
             </article>
 
@@ -1125,19 +1190,16 @@ footer {
 
             <article class="hanging-card card4 reveal">
 
-                <div class="hanging-string"></div>
-                <div class="hanging-clip"></div>
-
                 <h3 class="card-title">
                     you're my bestie.
                 </h3>
 
                 <p class="card-text">
-                    You're the first person I want to tell things to,
+                    you’re the first person i want to tell things to,
                     whether they're important or completely stupid.
                 </p>
 
-                <div class="card-doodle">♡</div>
+                <div class="card-symbol">♡</div>
 
             </article>
 
@@ -1146,19 +1208,16 @@ footer {
 
             <article class="hanging-card card5 reveal">
 
-                <div class="hanging-string"></div>
-                <div class="hanging-clip"></div>
-
                 <h3 class="card-title">
-                    you're my girlie too.
+                    you're my girlie.
                 </h3>
 
                 <p class="card-text">
-                    The one I can be silly with, dramatic with, emotional
+                    the one i can be silly with, dramatic with, emotional
                     with and completely myself around.
                 </p>
 
-                <div class="card-doodle">✿</div>
+                <div class="card-symbol">✿</div>
 
             </article>
 
@@ -1167,19 +1226,16 @@ footer {
 
             <article class="hanging-card card6 reveal">
 
-                <div class="hanging-string"></div>
-                <div class="hanging-clip"></div>
-
                 <h3 class="card-title">
-                    you feel like home.
+                    you are my home.
                 </h3>
 
                 <p class="card-text">
-                    And maybe that's the simplest way I can explain
-                    what you mean to me.
+                    and maybe that's the simplest way i can explain what
+                    you mean to me.
                 </p>
 
-                <div class="card-doodle">⌂</div>
+                <div class="card-symbol">⌂</div>
 
             </article>
 
@@ -1190,73 +1246,49 @@ footer {
 </section>
 
 
-<!-- LITTLE DOODLES -->
-
-<div class="doodle-strip">
-
-    <div class="doodle-line">
-
-        <div class="doodle">
-            <span class="doodle-icon">🍝</span>
-            our pasta
-        </div>
-
-        <div class="doodle">
-            <span class="doodle-icon">🥑</span>
-            avocado toasties
-        </div>
-
-        <div class="doodle">
-            <span class="doodle-icon">🧋</span>
-            iced coffee
-        </div>
-
-        <div class="doodle">
-            <span class="doodle-icon">✦</span>
-            our little things
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- FLOWERS -->
+<!-- =========================
+     FLOWERS
+========================= -->
 
 <section class="bouquet">
 
-    <span class="page-doodle doodle-flower float"
-          style="left:7%;top:20%;">✿</span>
+    <div class="doodle-field">
 
-    <span class="page-doodle doodle-flower float"
-          style="right:7%;bottom:20%;">✿</span>
+        <span class="doodle flower-doodle floating"
+              style="left:8%;top:18%;">✿</span>
+
+        <span class="doodle flower-doodle floating"
+              style="right:8%;top:25%;">❀</span>
+
+        <span class="doodle heart-doodle floating"
+              style="left:10%;bottom:20%;">♡</span>
+
+        <span class="doodle sparkle-doodle floating"
+              style="right:12%;bottom:22%;">✦</span>
+
+    </div>
 
     <div class="container">
 
         <div class="reveal">
 
-            <div class="script-label">
-                a little something for you
-            </div>
-
             <h2 class="bouquet-heading">
                 because you<br>
-                deserve flowers too.
+                deserve flowers too hehe ♡
             </h2>
-
-            <p class="bouquet-sub">
-                sunflowers, lilies & roses — our favourites ♡
-            </p>
 
         </div>
 
+
         <!--
-            Upload your bouquet photo to this repository
-            with the exact filename:
+            ADD YOUR BOUQUET IMAGE HERE.
+
+            Rename your image to:
 
             bouquet.jpg
 
-            Then it will appear here.
+            and upload it into the same repository
+            as this index.html file.
         -->
 
         <div class="bouquet-frame reveal">
@@ -1264,7 +1296,7 @@ footer {
             <img
                 src="bouquet.jpg"
                 class="bouquet-photo"
-                alt="A bouquet of flowers"
+                alt="Bouquet for Punnu"
             >
 
             <div class="bouquet-caption">
@@ -1278,15 +1310,36 @@ footer {
 </section>
 
 
-<!-- MEMORIES -->
+<!-- =========================
+     MEMORIES
+========================= -->
 
 <section class="memories">
 
-    <span class="page-doodle doodle-heart float"
-          style="left:6%;top:13%;">♡</span>
+    <div class="doodle-field">
 
-    <span class="page-doodle doodle-star float"
-          style="right:7%;top:25%;">✦</span>
+        <span class="doodle heart-doodle floating"
+              style="left:6%;top:13%;">♡</span>
+
+        <span class="doodle sparkle-doodle floating"
+              style="right:8%;top:20%;">✦</span>
+
+        <span class="doodle bird-doodle floating"
+              style="left:14%;bottom:18%;">𓅪</span>
+
+        <span class="doodle flower-doodle floating"
+              style="right:10%;bottom:15%;">✿</span>
+
+        <span class="doodle food-doodle"
+              style="left:5%;top:52%;">🍝</span>
+
+        <span class="doodle food-doodle"
+              style="right:5%;top:48%;">☕</span>
+
+        <span class="doodle food-doodle"
+              style="left:22%;bottom:10%;">🥑</span>
+
+    </div>
 
     <div class="container">
 
@@ -1310,12 +1363,14 @@ footer {
             <div class="photo-thread thread6"></div>
 
 
+            <!-- PHOTO 1 -->
+
             <div class="polaroid photo1">
 
                 <div class="photo-clip"></div>
 
                 <img src="photo1.jpg"
-                     alt="Favourite memory">
+                     alt="Our memory">
 
                 <div class="polaroid-caption">
                     us ♡
@@ -1324,12 +1379,14 @@ footer {
             </div>
 
 
+            <!-- PHOTO 2 -->
+
             <div class="polaroid photo2">
 
                 <div class="photo-clip"></div>
 
                 <img src="photo2.jpg"
-                     alt="Favourite memory">
+                     alt="Our memory">
 
                 <div class="polaroid-caption">
                     my favourite
@@ -1338,12 +1395,14 @@ footer {
             </div>
 
 
+            <!-- PHOTO 3 -->
+
             <div class="polaroid photo3">
 
                 <div class="photo-clip"></div>
 
                 <img src="photo3.jpg"
-                     alt="Favourite memory">
+                     alt="Our memory">
 
                 <div class="polaroid-caption">
                     another little memory
@@ -1352,12 +1411,14 @@ footer {
             </div>
 
 
+            <!-- PHOTO 4 -->
+
             <div class="polaroid photo4">
 
                 <div class="photo-clip"></div>
 
                 <img src="photo4.jpg"
-                     alt="Favourite memory">
+                     alt="Our memory">
 
                 <div class="polaroid-caption">
                     home ♡
@@ -1366,12 +1427,14 @@ footer {
             </div>
 
 
+            <!-- PHOTO 5 -->
+
             <div class="polaroid photo5">
 
                 <div class="photo-clip"></div>
 
                 <img src="photo5.jpg"
-                     alt="Favourite memory">
+                     alt="Our memory">
 
                 <div class="polaroid-caption">
                     my bestie
@@ -1380,12 +1443,14 @@ footer {
             </div>
 
 
+            <!-- PHOTO 6 -->
+
             <div class="polaroid photo6">
 
                 <div class="photo-clip"></div>
 
                 <img src="photo6.jpg"
-                     alt="Favourite memory">
+                     alt="Our memory">
 
                 <div class="polaroid-caption">
                     forever one of my favourites
@@ -1400,60 +1465,87 @@ footer {
 </section>
 
 
-<!-- FINAL -->
+<!-- =========================
+     FINAL
+========================= -->
 
 <section class="final">
 
-    <span class="page-doodle doodle-heart float"
-          style="left:9%;top:18%;">♡</span>
+    <div class="doodle-field">
 
-    <span class="page-doodle doodle-star float"
-          style="right:11%;top:22%;">✦</span>
+        <span class="doodle heart-doodle floating"
+              style="left:8%;top:18%;">♡</span>
 
-    <span class="page-doodle doodle-heart float"
-          style="right:8%;bottom:18%;">♡</span>
+        <span class="doodle heart-doodle floating"
+              style="right:9%;top:24%;">♡</span>
 
-    <span class="page-doodle doodle-bird float"
-          style="left:12%;bottom:22%;">𓅪</span>
+        <span class="doodle sparkle-doodle floating"
+              style="left:15%;bottom:20%;">✦</span>
+
+        <span class="doodle sparkle-doodle floating"
+              style="right:13%;bottom:17%;">✧</span>
+
+        <span class="doodle flower-doodle floating"
+              style="left:7%;bottom:35%;">✿</span>
+
+        <span class="doodle bird-doodle floating"
+              style="right:8%;bottom:35%;">𓅪</span>
+
+        <span class="doodle food-doodle"
+              style="left:10%;top:43%;">☕</span>
+
+        <span class="doodle food-doodle"
+              style="right:10%;top:47%;">🥑</span>
+
+        <span class="doodle food-doodle"
+              style="left:24%;top:17%;">🍝</span>
+
+        <span class="doodle food-doodle"
+              style="right:24%;top:15%;">🎂</span>
+
+    </div>
+
 
     <div class="final-inner reveal">
-
-        <div class="final-small">
-            and finally... ♡
-        </div>
 
         <div class="home-line">
             home is where my punnu is. ❤️🧿
         </div>
+
 
         <h2>
             Happiest birthday<br>
             my baby.
         </h2>
 
-        <div class="final-message">
 
-            <p>
-                <strong>
-                    You’re the best thing thats ever happened to me.
-                </strong>
-            </p>
+        <div class="final-letter">
 
-            <p>
-                My everything.
-            </p>
+            <div class="final-message">
 
-            <div class="heart-line">
-                ♡ ✦ ♡ ✧ ♡
+                <p>
+                    <strong>
+                        You’re the best thing that’s ever happened to me.
+                    </strong>
+                </p>
+
+                <p>
+                    My everything.
+                </p>
+
+                <div class="heart-line">
+                    ♡ ✦ ♡ ✧ ♡
+                </div>
+
+                <p>
+                    I love you the most.
+                </p>
+
+                <p>
+                    Can’t do this life without you.
+                </p>
+
             </div>
-
-            <p>
-                I love you the most.
-            </p>
-
-            <p>
-                Can’t do this life without you.
-            </p>
 
         </div>
 
@@ -1469,7 +1561,9 @@ footer {
 
 <script>
 
-/* reveal animations */
+/* -----------------------------
+   SCROLL REVEALS
+----------------------------- */
 
 const reveals = document.querySelectorAll(".reveal");
 
@@ -1499,7 +1593,9 @@ reveals.forEach((element) => {
 });
 
 
-/* Polaroid entrance */
+/* -----------------------------
+   POLAROID ANIMATION
+----------------------------- */
 
 const photoWall = document.querySelector(".photo-wall");
 const photos = document.querySelectorAll(".polaroid");
@@ -1517,7 +1613,7 @@ if (photoWall) {
 
                         setTimeout(() => {
                             photo.classList.add("show");
-                        }, index * 180);
+                        }, index * 170);
 
                     });
 
@@ -1528,7 +1624,7 @@ if (photoWall) {
 
         },
         {
-            threshold: 0.12
+            threshold: 0.1
         }
     );
 
