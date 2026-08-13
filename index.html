@@ -4,28 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Punnu ♡</title>
+<title>Happy Birthday Punnu ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap" rel="stylesheet">
 
 <style>
-
 :root {
-    --cream: #faf7f1;
-    --paper: #fffdf9;
-    --lavender: #e4dced;
-    --lavender-deep: #81748f;
-    --blue: #dce8eb;
-    --blue-deep: #718a94;
-    --pink: #ead4d2;
-    --green: #cbd7c6;
-    --ink: #29272b;
-    --muted: #716b72;
-    --border: rgba(45,42,47,.25);
-    --shadow: rgba(39,35,42,.10);
+    --cream: #fbf8f4;
+    --paper: #fffdfb;
+    --lavender: #e4dcef;
+    --lavender-dark: #756582;
+    --blue: #dce9ed;
+    --blue-dark: #6d8790;
+    --pink: #ead5dc;
+    --pink-dark: #a27d8c;
+    --soft-yellow: #eee3c9;
+    --ink: #29262d;
+    --muted: #756e77;
+    --line: rgba(50, 45, 53, .22);
+    --shadow: rgba(42, 35, 48, .11);
 }
 
 * {
@@ -46,7 +46,7 @@ body {
     overflow-x: hidden;
 }
 
-/* soft paper texture */
+/* soft paper grain */
 
 body::before {
     content: "";
@@ -57,50 +57,43 @@ body::before {
     opacity: .035;
     background-image:
         radial-gradient(circle at 20% 30%, #000 .6px, transparent .8px),
-        radial-gradient(circle at 70% 70%, #000 .6px, transparent .8px);
-    background-size: 20px 20px, 27px 27px;
+        radial-gradient(circle at 70% 70%, #000 .5px, transparent .8px);
+    background-size: 22px 22px, 29px 29px;
 }
 
-/* floating decorations */
+/* background doodles */
 
-.floating {
-    position: fixed;
+.page-doodle {
+    position: absolute;
     pointer-events: none;
-    z-index: 2;
-    opacity: .5;
-    font-size: 18px;
-    animation: floatAround 6s ease-in-out infinite;
+    color: var(--lavender-dark);
+    opacity: .18;
+    font-family: "Caveat", cursive;
+    z-index: 1;
 }
 
-.float1 {
-    top: 14%;
-    left: 6%;
+.doodle-heart {
+    font-size: 48px;
 }
 
-.float2 {
-    top: 32%;
-    right: 7%;
-    animation-delay: 1s;
+.doodle-star {
+    font-size: 34px;
 }
 
-.float3 {
-    top: 70%;
-    left: 5%;
-    animation-delay: 2s;
+.doodle-bird {
+    font-size: 29px;
 }
 
-.float4 {
-    top: 84%;
-    right: 6%;
-    animation-delay: 3s;
+.float {
+    animation: gentleFloat 6s ease-in-out infinite;
 }
 
-@keyframes floatAround {
+@keyframes gentleFloat {
     0%,100% {
         transform: translateY(0) rotate(0);
     }
     50% {
-        transform: translateY(-12px) rotate(8deg);
+        transform: translateY(-10px) rotate(5deg);
     }
 }
 
@@ -109,124 +102,123 @@ body::before {
 .hero {
     min-height: 100vh;
     min-height: 100svh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     overflow: hidden;
-    padding: 50px 22px;
-    border-bottom: 1px solid var(--border);
+    padding: 45px 20px;
+    border-bottom: 1px solid var(--line);
 }
 
 .hero::before {
     content: "";
     position: absolute;
-    width: 450px;
-    height: 450px;
+    width: 520px;
+    height: 520px;
     border-radius: 50%;
     background: var(--lavender);
     opacity: .42;
-    top: -230px;
-    right: -120px;
+    top: -300px;
+    right: -130px;
 }
 
 .hero::after {
     content: "";
     position: absolute;
-    width: 390px;
-    height: 390px;
+    width: 430px;
+    height: 430px;
     border-radius: 50%;
     background: var(--blue);
-    opacity: .4;
-    bottom: -210px;
-    left: -140px;
+    opacity: .43;
+    bottom: -250px;
+    left: -130px;
 }
 
 .hero-inner {
     position: relative;
-    z-index: 3;
+    z-index: 4;
     max-width: 900px;
-    animation: heroAppear 1.3s ease;
+    animation: heroIn 1.2s ease both;
 }
 
-@keyframes heroAppear {
+@keyframes heroIn {
     from {
         opacity: 0;
         transform: translateY(25px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.handwritten {
-    font-family: "Caveat", cursive;
-}
-
-.hero-small {
-    font-family: "Caveat", cursive;
-    font-size: 27px;
-    color: var(--lavender-deep);
+.hero-cake {
+    font-size: 47px;
     margin-bottom: 20px;
-}
-
-.cake {
-    font-size: 53px;
     display: inline-block;
-    margin-bottom: 24px;
-    animation: cakeFloat 3.5s ease-in-out infinite;
+    animation: cakeFloat 4s ease-in-out infinite;
 }
 
 @keyframes cakeFloat {
     0%,100% {
         transform: translateY(0) rotate(-2deg);
     }
-
     50% {
-        transform: translateY(-9px) rotate(2deg);
+        transform: translateY(-8px) rotate(2deg);
     }
 }
 
 .hero h1 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(4.5rem, 13vw, 9rem);
-    font-weight: 500;
-    letter-spacing: -.065em;
+    font-family: "Caveat", cursive;
+    font-size: clamp(5.2rem, 14vw, 9.5rem);
+    font-weight: 600;
     line-height: .78;
-    margin-bottom: 28px;
+    letter-spacing: -.04em;
+    margin-bottom: 27px;
+    color: #312d34;
+    text-shadow: 0 3px 0 rgba(255,255,255,.7);
 }
 
 .hero-sub {
     font-family: "Italianno", cursive;
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    color: #625c64;
-    margin-bottom: 36px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--lavender-dark);
+    margin-bottom: 35px;
+}
+
+.hero-sub::before,
+.hero-sub::after {
+    content: "✦";
+    font-family: "Caveat", cursive;
+    font-size: .55em;
+    opacity: .45;
+    margin: 0 13px;
+    vertical-align: middle;
 }
 
 .open-button {
     display: inline-block;
-    padding: 13px 26px;
+    padding: 12px 25px;
     border: 1px solid var(--ink);
     border-radius: 100px;
     color: var(--ink);
     text-decoration: none;
     font-size: 14px;
-    background: rgba(255,255,255,.42);
+    background: rgba(255,255,255,.55);
     transition: .3s ease;
 }
 
 .open-button:hover {
     background: var(--ink);
-    color: white;
+    color: #fff;
     transform: translateY(-3px);
 }
 
 .scroll-note {
     position: absolute;
-    bottom: 23px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     font-family: "Caveat", cursive;
@@ -237,7 +229,9 @@ body::before {
 /* GENERAL */
 
 section {
-    padding: 125px 22px;
+    padding: 120px 22px;
+    position: relative;
+    overflow: hidden;
 }
 
 .container {
@@ -247,8 +241,10 @@ section {
 
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
+    transform: translateY(28px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
 }
 
 .reveal.visible {
@@ -261,29 +257,6 @@ section {
 .love {
     background: var(--paper);
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.love::before {
-    content: "♡";
-    position: absolute;
-    font-size: 170px;
-    color: var(--pink);
-    opacity: .18;
-    top: 40px;
-    left: 7%;
-    font-family: "Cormorant Garamond", serif;
-}
-
-.love::after {
-    content: "✦";
-    position: absolute;
-    font-size: 75px;
-    color: var(--lavender-deep);
-    opacity: .18;
-    bottom: 50px;
-    right: 9%;
 }
 
 .love-inner {
@@ -295,131 +268,267 @@ section {
 
 .love-heading {
     font-family: "Italianno", cursive;
-    font-size: clamp(4.2rem, 9vw, 7rem);
+    font-size: clamp(4.5rem, 10vw, 7.5rem);
     font-weight: 400;
-    line-height: .9;
+    line-height: .85;
+    color: #4c4650;
     margin-bottom: 25px;
 }
 
 .love-text {
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.45rem, 3vw, 2rem);
+    font-size: clamp(1.5rem, 3vw, 2.05rem);
     color: var(--muted);
 }
 
-.small-heart {
-    font-size: 28px;
-    margin-top: 28px;
-    animation: heartbeat 2.5s infinite;
+.love-heart {
+    font-size: 27px;
+    color: var(--pink-dark);
+    margin-top: 27px;
+    animation: heartbeat 2.8s ease-in-out infinite;
 }
 
 @keyframes heartbeat {
     0%,100% { transform: scale(1); }
-    10% { transform: scale(1.15); }
+    10% { transform: scale(1.13); }
     20% { transform: scale(1); }
 }
 
-/* THINGS */
+/* LITTLE THINGS */
 
 .things {
-    background: var(--cream);
+    background:
+        linear-gradient(
+            135deg,
+            #faf7f4 0%,
+            #eee8f2 48%,
+            #e6eef0 100%
+        );
 }
 
-.section-script {
-    font-family: "Caveat", cursive;
-    color: var(--lavender-deep);
-    font-size: 25px;
-    margin-bottom: 8px;
-}
-
-.section-title {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 500;
-    font-size: clamp(3.3rem, 7vw, 6rem);
-    line-height: .88;
-    letter-spacing: -.05em;
-    margin-bottom: 30px;
-}
-
-.intro {
-    max-width: 670px;
-    color: var(--muted);
-    margin-bottom: 45px;
-}
-
-.love-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-}
-
-.love-card {
+.things-heading {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
     position: relative;
-    padding: 32px;
-    min-height: 190px;
-    border: 1px solid var(--border);
-    background: var(--paper);
-    box-shadow: 0 15px 35px var(--shadow);
-    transition: .4s ease;
+    z-index: 2;
 }
 
-.love-card:nth-child(2) {
-    background: #f3eff8;
+.script-label {
+    font-family: "Caveat", cursive;
+    font-size: 25px;
+    color: var(--lavender-dark);
 }
 
-.love-card:nth-child(3) {
-    background: #f1f7f8;
+.things-heading h2 {
+    font-family: "Italianno", cursive;
+    font-weight: 400;
+    font-size: clamp(4rem, 9vw, 7rem);
+    line-height: .85;
+    color: #48414d;
+    margin-top: 6px;
 }
 
-.love-card:nth-child(4) {
-    background: #fbf5e9;
+.things-heading p {
+    font-family: "Caveat", cursive;
+    font-size: 24px;
+    color: var(--muted);
+    margin-top: 20px;
 }
 
-.love-card:nth-child(5) {
-    background: #f3eff8;
+/* hanging memory wall */
+
+.hanging-wall {
+    max-width: 1000px;
+    margin: 80px auto 0;
+    position: relative;
+    min-height: 650px;
 }
 
-.love-card:nth-child(6) {
-    background: #f1f7f8;
-}
-
-.love-card:hover {
-    transform: translateY(-7px) rotate(-.4deg);
-    box-shadow: 0 25px 45px rgba(39,35,42,.14);
-}
-
-.love-card h3 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 32px;
-    line-height: 1;
-    margin-bottom: 13px;
-}
-
-.love-card p {
-    color: #6d6870;
-    font-size: 14px;
-}
-
-.corner-doodle {
+.hanging-card {
     position: absolute;
-    right: 18px;
-    bottom: 12px;
-    opacity: .55;
+    width: 250px;
+    padding: 12px 12px 25px;
+    background: #fffdf9;
+    box-shadow: 0 18px 38px var(--shadow);
+    border: 1px solid rgba(30,25,35,.08);
+    transform: rotate(var(--rotation));
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+    z-index: 3;
+}
+
+.hanging-card:hover {
+    transform: translateY(-10px) rotate(0deg) scale(1.03);
+    box-shadow: 0 25px 50px rgba(42,35,48,.16);
+    z-index: 8;
+}
+
+.hanging-string {
+    position: absolute;
+    width: 1px;
+    height: 125px;
+    background: rgba(61,55,63,.42);
+    left: 50%;
+    top: -125px;
+}
+
+.hanging-clip {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 31px;
+    border: 2px solid #655f67;
+    border-radius: 5px;
+    background: #e1d3b7;
+}
+
+.card-title {
+    font-family: "Caveat", cursive;
+    font-size: 31px;
+    line-height: 1;
+    color: #504956;
+    margin: 5px 5px 10px;
+}
+
+.card-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    line-height: 1.35;
+    color: #69636b;
+    margin: 0 5px;
+}
+
+.card-doodle {
+    position: absolute;
+    right: 14px;
+    bottom: 8px;
+    font-family: "Caveat", cursive;
     font-size: 23px;
+    opacity: .55;
+}
+
+.card1 {
+    left: 3%;
+    top: 135px;
+    --rotation: -5deg;
+}
+
+.card2 {
+    left: 27%;
+    top: 25px;
+    --rotation: 3deg;
+}
+
+.card3 {
+    right: 27%;
+    top: 75px;
+    --rotation: -3deg;
+}
+
+.card4 {
+    right: 3%;
+    top: 145px;
+    --rotation: 5deg;
+}
+
+.card5 {
+    left: 15%;
+    top: 390px;
+    --rotation: 4deg;
+}
+
+.card6 {
+    right: 15%;
+    top: 385px;
+    --rotation: -5deg;
+}
+
+/* bird doodles */
+
+.bird {
+    position: absolute;
+    font-family: "Caveat", cursive;
+    color: var(--blue-dark);
+    opacity: .32;
+    font-size: 30px;
+    z-index: 1;
+    animation: birdFloat 5s ease-in-out infinite;
+}
+
+.bird1 {
+    left: 8%;
+    top: 60px;
+}
+
+.bird2 {
+    right: 10%;
+    top: 30px;
+    animation-delay: 1s;
+}
+
+.bird3 {
+    left: 42%;
+    top: 330px;
+    animation-delay: 1.7s;
+}
+
+.bird4 {
+    right: 6%;
+    bottom: 30px;
+    animation-delay: 2.4s;
+}
+
+@keyframes birdFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-9px) translateX(5px);
+    }
+}
+
+/* little decorations */
+
+.things-decoration {
+    position: absolute;
+    opacity: .17;
+    color: var(--pink-dark);
+    font-family: "Caveat", cursive;
+}
+
+.decor1 {
+    left: 5%;
+    top: 18%;
+    font-size: 65px;
+}
+
+.decor2 {
+    right: 5%;
+    top: 45%;
+    font-size: 75px;
+}
+
+.decor3 {
+    left: 7%;
+    bottom: 10%;
+    font-size: 50px;
 }
 
 /* DOODLE STRIP */
 
 .doodle-strip {
-    background: #eee9f3;
+    background: #e8e1ed;
     border-top: 1px solid rgba(45,42,47,.12);
     border-bottom: 1px solid rgba(45,42,47,.12);
-    padding: 28px 20px;
-    overflow: hidden;
+    padding: 28px 18px;
 }
 
 .doodle-line {
-    max-width: 900px;
+    max-width: 850px;
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -428,59 +537,38 @@ section {
 }
 
 .doodle {
+    text-align: center;
     font-family: "Caveat", cursive;
     font-size: 18px;
-    color: #67616a;
-    text-align: center;
-    animation: tinyFloat 4s ease-in-out infinite;
-}
-
-.doodle:nth-child(2) {
-    animation-delay: .8s;
-}
-
-.doodle:nth-child(3) {
-    animation-delay: 1.5s;
-}
-
-.doodle:nth-child(4) {
-    animation-delay: 2.1s;
+    color: #69616c;
+    opacity: .72;
 }
 
 .doodle-icon {
     display: block;
-    font-size: 29px;
+    font-size: 28px;
     margin-bottom: 1px;
 }
 
-@keyframes tinyFloat {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-/* BOUQUET */
+/* FLOWERS */
 
 .bouquet {
     background: var(--paper);
     text-align: center;
-    position: relative;
 }
 
 .bouquet-heading {
     font-family: "Italianno", cursive;
-    font-size: clamp(4rem, 8vw, 6.5rem);
-    line-height: .9;
-    margin-bottom: 25px;
+    font-size: clamp(4rem, 9vw, 6.8rem);
+    font-weight: 400;
+    line-height: .85;
+    color: #514a55;
 }
 
 .bouquet-sub {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 1.45rem;
+    margin-top: 22px;
+    font-family: "Caveat", cursive;
+    font-size: 25px;
     color: var(--muted);
 }
 
@@ -488,32 +576,9 @@ section {
     max-width: 720px;
     margin: 50px auto 0;
     padding: 12px;
-    border: 1px solid var(--border);
-    background: #f7f2eb;
-    box-shadow:
-        0 20px 50px rgba(39,35,42,.12),
-        inset 0 0 0 1px rgba(255,255,255,.7);
-    position: relative;
-}
-
-.bouquet-frame::before,
-.bouquet-frame::after {
-    position: absolute;
-    font-size: 24px;
-    color: var(--lavender-deep);
-    z-index: 3;
-}
-
-.bouquet-frame::before {
-    content: "✦";
-    top: 8px;
-    left: 14px;
-}
-
-.bouquet-frame::after {
-    content: "♡";
-    bottom: 7px;
-    right: 15px;
+    background: #f5f0e9;
+    border: 1px solid var(--line);
+    box-shadow: 0 22px 50px var(--shadow);
 }
 
 .bouquet-photo {
@@ -521,105 +586,111 @@ section {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     display: block;
-    background:
-        linear-gradient(135deg, #e7ddec, #dce8eb);
+    background: linear-gradient(
+        135deg,
+        #e7ddef,
+        #dce9ed
+    );
 }
 
 .bouquet-caption {
-    padding: 14px 10px 9px;
     font-family: "Caveat", cursive;
     font-size: 21px;
-    color: #6c6670;
+    padding: 13px 5px 7px;
+    color: #706873;
 }
 
 /* MEMORIES */
 
 .memories {
-    background: #e9e3ef;
-    position: relative;
-    overflow: hidden;
+    background:
+        linear-gradient(
+            145deg,
+            #e8e0ee,
+            #e0ebee
+        );
 }
 
 .memories-head {
     text-align: center;
-    margin-bottom: 60px;
+    max-width: 850px;
+    margin: auto;
 }
 
 .memories-head h2 {
     font-family: "Italianno", cursive;
-    font-size: clamp(3.4rem, 7vw, 5.8rem);
+    font-size: clamp(4rem, 8vw, 6.5rem);
     font-weight: 400;
     line-height: .9;
+    color: #4e4854;
 }
 
 .memories-head p {
-    max-width: 760px;
-    margin: 20px auto 0;
     font-family: "Caveat", cursive;
     font-size: 25px;
-    color: #68616b;
+    color: #6c6570;
+    margin-top: 17px;
 }
 
+/* photos */
+
 .photo-wall {
-    max-width: 970px;
-    min-height: 700px;
-    margin: auto;
+    max-width: 980px;
+    min-height: 720px;
+    margin: 65px auto 0;
     position: relative;
 }
 
-.thread {
+.photo-thread {
     position: absolute;
     top: 0;
     width: 1px;
-    height: 160px;
-    background: #5f5961;
-    opacity: .45;
-    transform-origin: top;
+    height: 165px;
+    background: rgba(65,59,67,.42);
 }
 
 .thread1 {
-    left: 12%;
+    left: 11%;
     transform: rotate(-4deg);
 }
 
 .thread2 {
-    left: 37%;
-    transform: rotate(4deg);
+    left: 36%;
+    transform: rotate(3deg);
 }
 
 .thread3 {
-    right: 37%;
+    right: 36%;
     transform: rotate(-3deg);
 }
 
 .thread4 {
-    right: 12%;
+    right: 11%;
     transform: rotate(5deg);
 }
 
 .thread5 {
     left: 27%;
-    top: 250px;
-    height: 100px;
-    transform: rotate(5deg);
+    top: 300px;
+    height: 105px;
 }
 
 .thread6 {
     right: 27%;
-    top: 255px;
-    height: 100px;
-    transform: rotate(-5deg);
+    top: 300px;
+    height: 105px;
 }
 
 .polaroid {
     position: absolute;
-    width: 195px;
-    padding: 9px 9px 36px;
+    width: 205px;
+    padding: 9px 9px 34px;
     background: #fffefa;
-    box-shadow: 0 18px 35px rgba(35,31,38,.15);
-    border: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 18px 38px rgba(35,31,38,.14);
     opacity: 0;
-    transition: opacity .8s ease, transform .8s ease;
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
 }
 
 .polaroid.show {
@@ -628,13 +699,13 @@ section {
 }
 
 .polaroid:hover {
-    transform: translateY(-10px) rotate(0deg) scale(1.04);
+    transform: translateY(-10px) rotate(0) scale(1.04);
     z-index: 5;
 }
 
 .polaroid img {
     width: 100%;
-    height: 205px;
+    height: 210px;
     object-fit: cover;
     display: block;
     background: #ddd;
@@ -643,10 +714,10 @@ section {
 .polaroid-caption {
     position: absolute;
     left: 13px;
-    bottom: 7px;
+    bottom: 6px;
     font-family: "Caveat", cursive;
-    font-size: 19px;
-    color: #625d64;
+    font-size: 18px;
+    color: #656068;
 }
 
 .photo-clip {
@@ -655,46 +726,45 @@ section {
     left: 50%;
     transform: translateX(-50%);
     width: 21px;
-    height: 32px;
-    border: 2px solid #59535b;
+    height: 31px;
+    border: 2px solid #5b555d;
     border-radius: 5px;
-    background: #d9c6a9;
-    z-index: 3;
+    background: #dbc7a4;
 }
 
 .photo1 {
-    left: 3%;
-    top: 85px;
+    left: 2%;
+    top: 90px;
     --rotation: -6deg;
 }
 
 .photo2 {
-    left: 28%;
+    left: 27%;
     top: 20px;
     --rotation: 4deg;
 }
 
 .photo3 {
-    right: 28%;
-    top: 55px;
+    right: 27%;
+    top: 60px;
     --rotation: -3deg;
 }
 
 .photo4 {
-    right: 3%;
-    top: 95px;
+    right: 2%;
+    top: 100px;
     --rotation: 7deg;
 }
 
 .photo5 {
-    left: 17%;
-    top: 350px;
+    left: 16%;
+    top: 405px;
     --rotation: 5deg;
 }
 
 .photo6 {
-    right: 17%;
-    top: 355px;
+    right: 16%;
+    top: 400px;
     --rotation: -6deg;
 }
 
@@ -706,30 +776,6 @@ section {
     align-items: center;
     text-align: center;
     background: var(--paper);
-    position: relative;
-    overflow: hidden;
-}
-
-.final::before {
-    content: "♡";
-    position: absolute;
-    left: 8%;
-    top: 14%;
-    font-size: 100px;
-    color: var(--pink);
-    opacity: .22;
-    animation: floatAround 5s ease-in-out infinite;
-}
-
-.final::after {
-    content: "♡";
-    position: absolute;
-    right: 8%;
-    bottom: 15%;
-    font-size: 85px;
-    color: var(--lavender-deep);
-    opacity: .2;
-    animation: floatAround 6s ease-in-out infinite reverse;
 }
 
 .final-inner {
@@ -742,43 +788,52 @@ section {
 .final-small {
     font-family: "Caveat", cursive;
     font-size: 25px;
-    color: var(--lavender-deep);
+    color: var(--lavender-dark);
+}
+
+.home-line {
+    font-family: "Italianno", cursive;
+    font-size: clamp(2.8rem, 7vw, 4.8rem);
+    color: #81718b;
+    margin: 25px 0 35px;
 }
 
 .final h2 {
-    font-family: "Italianno", cursive;
-    font-size: clamp(4rem, 9vw, 7rem);
-    font-weight: 400;
-    line-height: .85;
-    margin: 25px 0 38px;
+    font-family: "Caveat", cursive;
+    font-size: clamp(4.5rem, 11vw, 7.5rem);
+    font-weight: 600;
+    line-height: .82;
+    color: #433d47;
 }
 
 .final-message {
+    margin-top: 35px;
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(1.5rem, 3vw, 2rem);
-    color: #625c64;
-    line-height: 1.5;
+    color: #69616c;
+    line-height: 1.55;
 }
 
 .final-message strong {
-    font-weight: 600;
     color: var(--ink);
+    font-weight: 600;
 }
 
 .heart-line {
-    margin: 27px 0;
+    margin: 25px 0;
     font-size: 23px;
-    letter-spacing: 13px;
-    color: #a98e9c;
+    letter-spacing: 12px;
+    color: var(--pink-dark);
+    opacity: .75;
 }
 
 footer {
     text-align: center;
     background: var(--paper);
-    padding: 25px 20px 42px;
+    padding: 20px 20px 40px;
     font-family: "Caveat", cursive;
     font-size: 19px;
-    color: #89828b;
+    color: #8b838d;
 }
 
 /* mobile */
@@ -789,65 +844,69 @@ footer {
         padding: 90px 20px;
     }
 
-    .hero {
-        padding: 45px 20px;
-    }
-
     .hero h1 {
-        font-size: clamp(4.3rem, 19vw, 6rem);
+        font-size: clamp(4.8rem, 19vw, 6.5rem);
     }
 
-    .cake {
-        font-size: 45px;
+    .hero-sub {
+        font-size: 2.25rem;
     }
 
-    .love-grid {
-        grid-template-columns: 1fr;
+    .hanging-wall {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 14px;
+        padding: 20px 5px;
     }
 
-    .love-card {
-        min-height: 160px;
+    .hanging-card {
+        position: relative;
+        width: 100%;
+        left: auto;
+        right: auto;
+        top: auto;
+        padding: 10px 10px 22px;
+    }
+
+    .hanging-string {
+        display: none;
+    }
+
+    .card-title {
+        font-size: 27px;
+    }
+
+    .card-text {
+        font-size: 16px;
+    }
+
+    .bird {
+        display: none;
     }
 
     .doodle-line {
-        gap: 8px;
-    }
-
-    .doodle {
-        font-size: 15px;
-    }
-
-    .doodle-icon {
-        font-size: 26px;
-    }
-
-    .bouquet-frame {
-        margin-top: 35px;
+        flex-wrap: wrap;
     }
 
     .photo-wall {
+        min-height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 30px 14px;
-        min-height: auto;
-        padding: 10px 5px 20px;
+        gap: 28px 13px;
     }
 
-    .thread {
+    .photo-thread {
         display: none;
     }
 
     .polaroid {
         position: relative;
         width: 100%;
-        top: auto;
         left: auto;
         right: auto;
-        padding: 7px 7px 29px;
-    }
-
-    .polaroid.show {
-        transform: rotate(var(--rotation));
+        top: auto;
+        padding: 7px 7px 28px;
     }
 
     .polaroid img {
@@ -857,13 +916,14 @@ footer {
     .photo-clip {
         display: none;
     }
-
-    .final h2 {
-        font-size: clamp(4rem, 15vw, 5.5rem);
-    }
 }
 
 @media (max-width: 430px) {
+
+    .hanging-wall {
+        grid-template-columns: 1fr;
+        max-width: 290px;
+    }
 
     .photo-wall {
         grid-template-columns: 1fr;
@@ -874,38 +934,38 @@ footer {
         height: 275px;
     }
 
-    .doodle-line {
-        flex-wrap: wrap;
+    .hero h1 {
+        font-size: 4.7rem;
     }
 
+    .hero-sub {
+        font-size: 2rem;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- floating decorations -->
-
-<div class="floating float1">✦</div>
-<div class="floating float2">♡</div>
-<div class="floating float3">✧</div>
-<div class="floating float4">♡</div>
-
-
 <!-- HERO -->
 
 <header class="hero">
 
+    <span class="page-doodle doodle-heart float"
+          style="left:9%;top:19%;">♡</span>
+
+    <span class="page-doodle doodle-star float"
+          style="right:12%;top:24%;">✦</span>
+
+    <span class="page-doodle doodle-bird float"
+          style="left:15%;bottom:23%;">𓅪</span>
+
+    <span class="page-doodle doodle-heart float"
+          style="right:10%;bottom:18%;">♡</span>
+
     <div class="hero-inner">
 
-        <div class="hero-small">
-            for punnu ♡
-        </div>
-
-        <div class="cake">
-            🎂
-        </div>
+        <div class="hero-cake">🎂</div>
 
         <h1>
             Happy Birthday,<br>
@@ -933,6 +993,15 @@ footer {
 
 <section class="love" id="love">
 
+    <span class="page-doodle doodle-heart float"
+          style="left:8%;top:15%;">♡</span>
+
+    <span class="page-doodle doodle-star float"
+          style="right:9%;bottom:18%;">✦</span>
+
+    <span class="page-doodle doodle-bird float"
+          style="right:17%;top:23%;">𓅪</span>
+
     <div class="love-inner reveal">
 
         <h2 class="love-heading">
@@ -944,7 +1013,7 @@ footer {
             I'm so lucky to have found you, my soulmate.
         </p>
 
-        <div class="small-heart">
+        <div class="love-heart">
             ♡
         </div>
 
@@ -953,139 +1022,164 @@ footer {
 </section>
 
 
-<!-- THINGS I LOVE ABOUT YOU -->
+<!-- LITTLE THINGS -->
 
 <section class="things">
 
+    <span class="things-decoration decor1">♡</span>
+    <span class="things-decoration decor2">✦</span>
+    <span class="things-decoration decor3">♡</span>
+
+    <span class="bird bird1">𓅪</span>
+    <span class="bird bird2">𓅪</span>
+    <span class="bird bird3">𓅪</span>
+    <span class="bird bird4">𓅪</span>
+
     <div class="container">
 
-        <div class="reveal">
+        <div class="things-heading reveal">
 
-            <div class="section-script">
-                little things ♡
+            <div class="script-label">
+                little pieces of my heart ♡
             </div>
 
-            <h2 class="section-title">
+            <h2>
                 things i love<br>
                 about you.
             </h2>
 
-            <p class="intro">
-                Maybe they're little things. Maybe they're things you don't
-                even realise you do. But somehow, they're some of the things
-                I love most about you.
+            <p>
+                the little things that somehow mean the most.
             </p>
 
         </div>
 
 
-        <div class="love-grid">
+        <div class="hanging-wall">
 
-            <article class="love-card reveal">
+            <!-- CARD 1 -->
 
-                <h3>
-                    You're the most caring person ever.
+            <article class="hanging-card card1 reveal">
+
+                <div class="hanging-string"></div>
+                <div class="hanging-clip"></div>
+
+                <h3 class="card-title">
+                    you're the most caring person ever.
                 </h3>
 
-                <p>
+                <p class="card-text">
                     You think of yourself later and everyone else first —
                     which I almost always hate about you 😭 — but I think
                     that's also what makes you, you.
                 </p>
 
-                <div class="corner-doodle">
-                    ♡
-                </div>
+                <div class="card-doodle">♡</div>
 
             </article>
 
 
-            <article class="love-card reveal">
+            <!-- CARD 2 -->
 
-                <h3>
-                    You always show up.
+            <article class="hanging-card card2 reveal">
+
+                <div class="hanging-string"></div>
+                <div class="hanging-clip"></div>
+
+                <h3 class="card-title">
+                    you always show up.
                 </h3>
 
-                <p>
-                    No matter what is happening, somehow you always manage
+                <p class="card-text">
+                    Somehow, no matter what is happening, you always manage
                     to be there when I need you.
                 </p>
 
-                <div class="corner-doodle">
-                    ✦
-                </div>
+                <div class="card-doodle">✦</div>
 
             </article>
 
 
-            <article class="love-card reveal">
+            <!-- CARD 3 -->
 
-                <h3>
-                    You remember everything.
+            <article class="hanging-card card3 reveal">
+
+                <div class="hanging-string"></div>
+                <div class="hanging-clip"></div>
+
+                <h3 class="card-title">
+                    you remember everything.
                 </h3>
 
-                <p>
+                <p class="card-text">
                     Even the tiny things I casually mention and completely
                     forget about afterwards.
                 </p>
 
-                <div class="corner-doodle">
-                    ⌁
-                </div>
+                <div class="card-doodle">⌁</div>
 
             </article>
 
 
-            <article class="love-card reveal">
+            <!-- CARD 4 -->
 
-                <h3>
-                    You're my bestie.
+            <article class="hanging-card card4 reveal">
+
+                <div class="hanging-string"></div>
+                <div class="hanging-clip"></div>
+
+                <h3 class="card-title">
+                    you're my bestie.
                 </h3>
 
-                <p>
+                <p class="card-text">
                     You're the first person I want to tell things to,
                     whether they're important or completely stupid.
                 </p>
 
-                <div class="corner-doodle">
-                    ♡
-                </div>
+                <div class="card-doodle">♡</div>
 
             </article>
 
 
-            <article class="love-card reveal">
+            <!-- CARD 5 -->
 
-                <h3>
-                    You're my girlie too.
+            <article class="hanging-card card5 reveal">
+
+                <div class="hanging-string"></div>
+                <div class="hanging-clip"></div>
+
+                <h3 class="card-title">
+                    you're my girlie too.
                 </h3>
 
-                <p>
+                <p class="card-text">
                     The one I can be silly with, dramatic with, emotional
                     with and completely myself around.
                 </p>
 
-                <div class="corner-doodle">
-                    ✿
-                </div>
+                <div class="card-doodle">✿</div>
 
             </article>
 
 
-            <article class="love-card reveal">
+            <!-- CARD 6 -->
 
-                <h3>
-                    You feel like home.
+            <article class="hanging-card card6 reveal">
+
+                <div class="hanging-string"></div>
+                <div class="hanging-clip"></div>
+
+                <h3 class="card-title">
+                    you feel like home.
                 </h3>
 
-                <p>
+                <p class="card-text">
                     And maybe that's the simplest way I can explain
                     what you mean to me.
                 </p>
 
-                <div class="corner-doodle">
-                    ⌂
-                </div>
+                <div class="card-doodle">⌂</div>
 
             </article>
 
@@ -1096,7 +1190,7 @@ footer {
 </section>
 
 
-<!-- SCATTERED LITTLE DOODLES -->
+<!-- LITTLE DOODLES -->
 
 <div class="doodle-strip">
 
@@ -1119,7 +1213,7 @@ footer {
 
         <div class="doodle">
             <span class="doodle-icon">✦</span>
-            us
+            our little things
         </div>
 
     </div>
@@ -1131,12 +1225,18 @@ footer {
 
 <section class="bouquet">
 
+    <span class="page-doodle doodle-flower float"
+          style="left:7%;top:20%;">✿</span>
+
+    <span class="page-doodle doodle-flower float"
+          style="right:7%;bottom:20%;">✿</span>
+
     <div class="container">
 
         <div class="reveal">
 
-            <div class="section-script">
-                a little something for you ♡
+            <div class="script-label">
+                a little something for you
             </div>
 
             <h2 class="bouquet-heading">
@@ -1150,23 +1250,20 @@ footer {
 
         </div>
 
-
         <!--
-            YOUR BOUQUET PHOTO GOES HERE.
-
-            Later, upload your bouquet image to GitHub
-            and rename it:
+            Upload your bouquet photo to this repository
+            with the exact filename:
 
             bouquet.jpg
 
-            Then this image will automatically appear here.
+            Then it will appear here.
         -->
 
         <div class="bouquet-frame reveal">
 
             <img
-                class="bouquet-photo"
                 src="bouquet.jpg"
+                class="bouquet-photo"
                 alt="A bouquet of flowers"
             >
 
@@ -1185,6 +1282,12 @@ footer {
 
 <section class="memories">
 
+    <span class="page-doodle doodle-heart float"
+          style="left:6%;top:13%;">♡</span>
+
+    <span class="page-doodle doodle-star float"
+          style="right:7%;top:25%;">✦</span>
+
     <div class="container">
 
         <div class="memories-head reveal">
@@ -1199,24 +1302,20 @@ footer {
 
         <div class="photo-wall">
 
-            <div class="thread thread1"></div>
-            <div class="thread thread2"></div>
-            <div class="thread thread3"></div>
-            <div class="thread thread4"></div>
-            <div class="thread thread5"></div>
-            <div class="thread thread6"></div>
+            <div class="photo-thread thread1"></div>
+            <div class="photo-thread thread2"></div>
+            <div class="photo-thread thread3"></div>
+            <div class="photo-thread thread4"></div>
+            <div class="photo-thread thread5"></div>
+            <div class="photo-thread thread6"></div>
 
-
-            <!-- PHOTO 1 -->
 
             <div class="polaroid photo1">
 
                 <div class="photo-clip"></div>
 
-                <img
-                    src="photo1.jpg"
-                    alt="A favourite memory of us"
-                >
+                <img src="photo1.jpg"
+                     alt="Favourite memory">
 
                 <div class="polaroid-caption">
                     us ♡
@@ -1225,16 +1324,12 @@ footer {
             </div>
 
 
-            <!-- PHOTO 2 -->
-
             <div class="polaroid photo2">
 
                 <div class="photo-clip"></div>
 
-                <img
-                    src="photo2.jpg"
-                    alt="A favourite memory of us"
-                >
+                <img src="photo2.jpg"
+                     alt="Favourite memory">
 
                 <div class="polaroid-caption">
                     my favourite
@@ -1243,16 +1338,12 @@ footer {
             </div>
 
 
-            <!-- PHOTO 3 -->
-
             <div class="polaroid photo3">
 
                 <div class="photo-clip"></div>
 
-                <img
-                    src="photo3.jpg"
-                    alt="A favourite memory of us"
-                >
+                <img src="photo3.jpg"
+                     alt="Favourite memory">
 
                 <div class="polaroid-caption">
                     another little memory
@@ -1261,16 +1352,12 @@ footer {
             </div>
 
 
-            <!-- PHOTO 4 -->
-
             <div class="polaroid photo4">
 
                 <div class="photo-clip"></div>
 
-                <img
-                    src="photo4.jpg"
-                    alt="A favourite memory of us"
-                >
+                <img src="photo4.jpg"
+                     alt="Favourite memory">
 
                 <div class="polaroid-caption">
                     home ♡
@@ -1279,16 +1366,12 @@ footer {
             </div>
 
 
-            <!-- PHOTO 5 -->
-
             <div class="polaroid photo5">
 
                 <div class="photo-clip"></div>
 
-                <img
-                    src="photo5.jpg"
-                    alt="A favourite memory of us"
-                >
+                <img src="photo5.jpg"
+                     alt="Favourite memory">
 
                 <div class="polaroid-caption">
                     my bestie
@@ -1297,16 +1380,12 @@ footer {
             </div>
 
 
-            <!-- PHOTO 6 -->
-
             <div class="polaroid photo6">
 
                 <div class="photo-clip"></div>
 
-                <img
-                    src="photo6.jpg"
-                    alt="A favourite memory of us"
-                >
+                <img src="photo6.jpg"
+                     alt="Favourite memory">
 
                 <div class="polaroid-caption">
                     forever one of my favourites
@@ -1321,14 +1400,30 @@ footer {
 </section>
 
 
-<!-- FINAL MESSAGE -->
+<!-- FINAL -->
 
 <section class="final">
+
+    <span class="page-doodle doodle-heart float"
+          style="left:9%;top:18%;">♡</span>
+
+    <span class="page-doodle doodle-star float"
+          style="right:11%;top:22%;">✦</span>
+
+    <span class="page-doodle doodle-heart float"
+          style="right:8%;bottom:18%;">♡</span>
+
+    <span class="page-doodle doodle-bird float"
+          style="left:12%;bottom:22%;">𓅪</span>
 
     <div class="final-inner reveal">
 
         <div class="final-small">
             and finally... ♡
+        </div>
+
+        <div class="home-line">
+            home is where my punnu is. ❤️🧿
         </div>
 
         <h2>
@@ -1374,11 +1469,11 @@ footer {
 
 <script>
 
-/* Scroll reveal */
+/* reveal animations */
 
-const revealElements = document.querySelectorAll(".reveal");
+const reveals = document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver(
+const observer = new IntersectionObserver(
     (entries) => {
 
         entries.forEach((entry) => {
@@ -1387,7 +1482,7 @@ const revealObserver = new IntersectionObserver(
 
                 entry.target.classList.add("visible");
 
-                revealObserver.unobserve(entry.target);
+                observer.unobserve(entry.target);
 
             }
 
@@ -1399,44 +1494,44 @@ const revealObserver = new IntersectionObserver(
     }
 );
 
-revealElements.forEach((element) => {
-    revealObserver.observe(element);
+reveals.forEach((element) => {
+    observer.observe(element);
 });
 
 
 /* Polaroid entrance */
 
 const photoWall = document.querySelector(".photo-wall");
-const polaroids = document.querySelectorAll(".polaroid");
-
-const photoObserver = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-                polaroids.forEach((photo, index) => {
-
-                    setTimeout(() => {
-                        photo.classList.add("show");
-                    }, index * 180);
-
-                });
-
-                photoObserver.disconnect();
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
-    }
-);
+const photos = document.querySelectorAll(".polaroid");
 
 if (photoWall) {
+
+    const photoObserver = new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    photos.forEach((photo, index) => {
+
+                        setTimeout(() => {
+                            photo.classList.add("show");
+                        }, index * 180);
+
+                    });
+
+                    photoObserver.disconnect();
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
     photoObserver.observe(photoWall);
 }
 
