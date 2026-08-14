@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
+
 :root {
     --cream: #fffdfb;
     --lavender: #eee9f8;
@@ -38,11 +38,15 @@ body {
         radial-gradient(circle at 90% 20%, rgba(242,220,229,.55), transparent 22%),
         radial-gradient(circle at 50% 80%, rgba(220,235,242,.45), transparent 25%),
         var(--cream);
+
     color: var(--ink);
     font-family: "DM Sans", sans-serif;
     font-weight: 300;
     overflow-x: hidden;
 }
+
+
+/* FLOATING DOODLES */
 
 .doodle {
     position: fixed;
@@ -53,21 +57,59 @@ body {
     animation: drift 7s ease-in-out infinite;
 }
 
-.d1 { top: 9%; left: 5%; font-size: 22px; }
-.d2 { top: 18%; right: 7%; font-size: 19px; animation-delay: 1s; }
-.d3 { top: 42%; left: 3%; font-size: 18px; animation-delay: 2s; }
-.d4 { top: 54%; right: 4%; font-size: 24px; animation-delay: 3s; }
-.d5 { top: 73%; left: 7%; font-size: 18px; animation-delay: 1.5s; }
-.d6 { top: 84%; right: 8%; font-size: 20px; animation-delay: 2.5s; }
+.d1 {
+    top: 9%;
+    left: 5%;
+    font-size: 22px;
+}
+
+.d2 {
+    top: 18%;
+    right: 7%;
+    font-size: 19px;
+    animation-delay: 1s;
+}
+
+.d3 {
+    top: 42%;
+    left: 3%;
+    font-size: 18px;
+    animation-delay: 2s;
+}
+
+.d4 {
+    top: 54%;
+    right: 4%;
+    font-size: 24px;
+    animation-delay: 3s;
+}
+
+.d5 {
+    top: 73%;
+    left: 7%;
+    font-size: 18px;
+    animation-delay: 1.5s;
+}
+
+.d6 {
+    top: 84%;
+    right: 8%;
+    font-size: 20px;
+    animation-delay: 2.5s;
+}
 
 @keyframes drift {
     0%,100% {
         transform: translateY(0) rotate(-3deg);
     }
+
     50% {
         transform: translateY(-10px) rotate(4deg);
     }
 }
+
+
+/* GENERAL */
 
 main {
     position: relative;
@@ -106,6 +148,7 @@ section {
     }
 }
 
+
 /* HERO */
 
 .hero {
@@ -135,6 +178,7 @@ section {
         opacity: .45;
         transform: translateY(0);
     }
+
     50% {
         opacity: .85;
         transform: translateY(-3px);
@@ -165,6 +209,7 @@ section {
     letter-spacing: 8px;
 }
 
+
 /* LOVE */
 
 .intro {
@@ -189,6 +234,7 @@ section {
     color: #8b7895;
 }
 
+
 /* FLOWERS */
 
 .flowers {
@@ -202,6 +248,7 @@ section {
         rgba(255,255,255,.72),
         rgba(242,221,231,.58)
     );
+
     border: 1px solid var(--line);
     border-radius: 28px;
     padding: 60px 30px;
@@ -233,13 +280,6 @@ section {
     font-weight: 500;
 }
 
-.flowers-card p {
-    margin-top: 12px;
-    font-family: "Parisienne", cursive;
-    font-size: 29px;
-    color: #8e7894;
-}
-
 .bouquet-wrap {
     margin: 35px auto 0;
     max-width: 430px;
@@ -258,10 +298,47 @@ section {
     0%,100% {
         transform: translateY(0) rotate(-1deg);
     }
+
     50% {
         transform: translateY(-10px) rotate(1.2deg);
     }
 }
+
+
+/* BIRTHDAY CAT NEAR FLOWERS */
+
+.cat-near-flowers {
+    margin: 25px auto 0;
+    max-width: 330px;
+    text-align: center;
+}
+
+.cat-near-flowers img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    filter: drop-shadow(0 15px 22px rgba(70,60,80,.12));
+    animation: catFloat 5.5s ease-in-out infinite;
+}
+
+@keyframes catFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-11px);
+    }
+}
+
+.cat-note {
+    margin-top: 5px;
+    font-family: "Parisienne", cursive;
+    font-size: 25px;
+    color: #8c7891;
+}
+
 
 /* MEMORIES */
 
@@ -344,6 +421,7 @@ section {
     color: #645c69;
 }
 
+
 /* LITTLE THINGS */
 
 .little-things {
@@ -374,11 +452,13 @@ section {
     text-align: left;
     padding: 34px 35px;
     min-height: 180px;
+
     background: linear-gradient(
         145deg,
         rgba(248,238,244,.82),
         rgba(236,232,247,.78)
     );
+
     border: 1px solid var(--line);
     border-radius: 8px;
     box-shadow: 0 12px 30px rgba(60,55,70,.07);
@@ -391,6 +471,7 @@ section {
         rgba(231,238,246,.8),
         rgba(248,241,249,.8)
     );
+
     transform: rotate(1deg);
 }
 
@@ -429,6 +510,7 @@ section {
     color: rgba(80,75,90,.48);
 }
 
+
 /* HOME */
 
 .home-line {
@@ -446,54 +528,6 @@ section {
     font-size: .55em;
 }
 
-/* BIRTHDAY CAT */
-
-.cat-section {
-    text-align: center;
-    padding-top: 80px;
-}
-
-.cat-card {
-    max-width: 520px;
-    margin: auto;
-    position: relative;
-}
-
-.cat-image {
-    width: min(100%, 500px);
-    display: block;
-    margin: auto;
-    filter: drop-shadow(0 18px 25px rgba(70,60,80,.13));
-    animation:
-        catFloat 5.5s ease-in-out infinite,
-        catTilt 7s ease-in-out infinite;
-    transform-origin: center bottom;
-}
-
-@keyframes catFloat {
-    0%,100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-11px);
-    }
-}
-
-@keyframes catTilt {
-    0%,100% {
-        rotate: -1deg;
-    }
-    50% {
-        rotate: 1deg;
-    }
-}
-
-.cat-note {
-    margin-top: -8px;
-    font-family: "Parisienne", cursive;
-    font-size: 25px;
-    color: #8c7891;
-}
 
 /* FINAL */
 
@@ -571,6 +605,7 @@ section {
     opacity: .4;
 }
 
+
 /* FOOTER */
 
 footer {
@@ -580,6 +615,7 @@ footer {
     font-family: "Parisienne", cursive;
     font-size: 23px;
 }
+
 
 /* RESPONSIVE */
 
@@ -625,6 +661,10 @@ footer {
         max-width: 310px;
     }
 
+    .cat-near-flowers {
+        max-width: 270px;
+    }
+
     .polaroid-gallery {
         grid-template-columns: 1fr;
         max-width: 300px;
@@ -662,6 +702,7 @@ footer {
         opacity: .25;
     }
 }
+
 </style>
 </head>
 
@@ -674,15 +715,23 @@ footer {
 <div class="doodle d5">⋆</div>
 <div class="doodle d6">♡</div>
 
+
 <main>
 
+
+<!-- HERO -->
+
 <section class="hero">
+
     <div class="hero-inner reveal">
+
         <div class="hero-candles">
             🕯️ 🕯️ 🕯️
         </div>
 
-        <h1>happy birthday my punnu</h1>
+        <h1>
+            happy birthday my punnu
+        </h1>
 
         <div class="hero-sub">
             it's our birthday hehe ♡
@@ -691,10 +740,16 @@ footer {
         <div class="hero-heart">
             ✦ &nbsp; ♡ &nbsp; ✦
         </div>
+
     </div>
+
 </section>
 
+
+<!-- LOVE -->
+
 <section class="intro">
+
     <div class="divider"></div>
 
     <h2>
@@ -705,7 +760,11 @@ footer {
     <p>
         I'm so lucky to have found you, my soulmate.
     </p>
+
 </section>
+
+
+<!-- FLOWERS + BIRTHDAY CAT -->
 
 <section class="flowers">
 
@@ -720,140 +779,276 @@ footer {
             deserve flowers too hehe
         </h2>
 
+
         <div class="bouquet-wrap">
+
             <img
                 src="bouquet.png"
                 class="bouquet"
                 alt="A bouquet for Punnu"
             >
+
+        </div>
+
+
+        <div class="cat-near-flowers">
+
+            <img
+                src="birthday-cat.jpg"
+                alt="Cute birthday cat"
+            >
+
+            <div class="cat-note">
+                a tiny birthday delivery just for you ♡
+            </div>
+
         </div>
 
     </div>
 
 </section>
+
+
+<!-- MEMORIES -->
 
 <section class="memories">
 
     <div class="divider"></div>
 
-    <h2>little pieces of us ♡</h2>
+    <h2>
+        little pieces of us ♡
+    </h2>
 
     <div class="memories-intro">
         some of my favourite memories, actually all of our memories are my favourite.
     </div>
 
+
     <div class="polaroid-gallery">
 
-        <div class="polaroid-holder">
-            <div class="thread"></div>
-            <div class="polaroid">
-                <img src="photo1.png" alt="Our favourite picture">
-                <div class="caption">our favourite picture &lt;3</div>
-            </div>
-        </div>
 
         <div class="polaroid-holder">
+
             <div class="thread"></div>
+
             <div class="polaroid">
-                <img src="photo2.jpg" alt="Iced coffee">
-                <div class="caption">iced coffee lovers &lt;3</div>
+
+                <img
+                    src="photo1.jpg"
+                    alt="Our favourite picture"
+                >
+
+                <div class="caption">
+                    our favourite picture &lt;3
+                </div>
+
             </div>
+
         </div>
 
-        <div class="polaroid-holder">
-            <div class="thread"></div>
-            <div class="polaroid">
-                <img src="photo3.jpg" alt="Shopping date">
-                <div class="caption">shopping date hehe &lt;3</div>
-            </div>
-        </div>
 
         <div class="polaroid-holder">
+
             <div class="thread"></div>
+
             <div class="polaroid">
-                <img src="photo4.jpg" alt="Home">
-                <div class="caption">home &lt;3</div>
+
+                <img
+                    src="photo2.jpg"
+                    alt="Iced coffee"
+                >
+
+                <div class="caption">
+                    iced coffee lovers &lt;3
+                </div>
+
             </div>
+
         </div>
 
+
         <div class="polaroid-holder">
+
             <div class="thread"></div>
+
             <div class="polaroid">
-                <img src="photo5.jpg" alt="Forever favourite">
-                <div class="caption">forever fav &lt;3</div>
+
+                <img
+                    src="photo3.jpg"
+                    alt="Shopping date"
+                >
+
+                <div class="caption">
+                    shopping date hehe &lt;3
+                </div>
+
             </div>
+
         </div>
+
+
+        <div class="polaroid-holder">
+
+            <div class="thread"></div>
+
+            <div class="polaroid">
+
+                <img
+                    src="photo4.jpg"
+                    alt="Home"
+                >
+
+                <div class="caption">
+                    home &lt;3
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="polaroid-holder">
+
+            <div class="thread"></div>
+
+            <div class="polaroid">
+
+                <img
+                    src="photo5.jpg"
+                    alt="Forever favourite"
+                >
+
+                <div class="caption">
+                    forever fav &lt;3
+                </div>
+
+            </div>
+
+        </div>
+
 
     </div>
 
 </section>
+
+
+<!-- LITTLE THINGS -->
 
 <section class="little-things">
 
     <div class="divider"></div>
 
-    <h2>little things i like about you</h2>
+    <h2>
+        little things i like about you
+    </h2>
 
     <div class="little-things-intro">
         the things that make you, you ♡
     </div>
 
+
     <div class="little-grid">
 
+
         <div class="little-card">
-            <h3>you're the most caring person ever.</h3>
+
+            <h3>
+                you're the most caring person ever.
+            </h3>
+
             <p>
                 you think of yourself later and everyone else first,
                 which i almost always hate about you; but I think that's
                 also what makes you, you.
             </p>
-            <span class="bracket">(baaki mein sudhar deu)</span>
+
+            <span class="bracket">
+                (baaki mein sudhar deu)
+            </span>
+
         </div>
 
+
         <div class="little-card">
-            <h3>you are always there for me.</h3>
+
+            <h3>
+                you are always there for me.
+            </h3>
+
             <p>
                 somehow, no matter what is happening, you always manage
                 to be there when i need you.
             </p>
-            <span class="bracket">(haan half of the times, extra dimag use karke nahi bhi aati)</span>
+
+            <span class="bracket">
+                (haan half of the times, extra dimag use karke nahi bhi aati)
+            </span>
+
         </div>
 
+
         <div class="little-card">
-            <h3>you remember everything.</h3>
+
+            <h3>
+                you remember everything.
+            </h3>
+
             <p>
                 even the tiny things i casually mention and completely
                 forget about afterwards.
             </p>
+
         </div>
 
+
         <div class="little-card">
-            <h3>you're my bestie.</h3>
+
+            <h3>
+                you're my bestie.
+            </h3>
+
             <p>
                 you’re the first person i want to tell things to,
                 whether they're important or completely stupid.
             </p>
+
         </div>
 
+
         <div class="little-card">
-            <h3>you're my girlie.</h3>
+
+            <h3>
+                you're my girlie.
+            </h3>
+
             <p>
                 the one I can be silly with, dramatic with, emotional
                 with and completely myself around.
             </p>
+
         </div>
 
+
         <div class="little-card">
-            <h3>you are my home.</h3>
+
+            <h3>
+                you are my home.
+            </h3>
+
             <p>
                 and maybe that's the simplest way i can explain what
                 you mean to me.
             </p>
+
         </div>
+
 
     </div>
 
 </section>
+
+
+<!-- HOME -->
 
 <section class="home-line">
 
@@ -864,23 +1059,8 @@ footer {
 
 </section>
 
-<section class="cat-section">
 
-    <div class="cat-card">
-
-        <img
-            src="birthday-cat.png"
-            class="cat-image"
-            alt="Cute birthday cat with cake and flowers"
-        >
-
-        <div class="cat-note">
-            a tiny birthday delivery just for you ♡
-        </div>
-
-    </div>
-
-</section>
+<!-- FINAL -->
 
 <section class="final">
 
@@ -917,12 +1097,16 @@ footer {
 
 </section>
 
+
 </main>
+
 
 <footer>
     made for my punnu ♡
 </footer>
 
+
 </body>
 </html>
-```
+
+
