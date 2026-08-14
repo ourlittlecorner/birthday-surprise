@@ -46,70 +46,103 @@ body {
 }
 
 
-/* FLOATING DOODLES */
+/* =========================================
+   SUBTLE FLOATING DOODLES
+   ========================================= */
 
 .doodle {
     position: fixed;
     z-index: 0;
     pointer-events: none;
-    opacity: .38;
     user-select: none;
-    animation: drift 7s ease-in-out infinite;
+    opacity: .16;
+    filter: saturate(.65);
+    animation: doodleFloat 8s ease-in-out infinite;
 }
 
-.d1 {
-    top: 9%;
-    left: 5%;
+.doodle1 {
+    top: 8%;
+    left: 4%;
     font-size: 22px;
 }
 
-.d2 {
-    top: 18%;
-    right: 7%;
+.doodle2 {
+    top: 15%;
+    right: 6%;
+    font-size: 20px;
+    animation-delay: 1s;
+}
+
+.doodle3 {
+    top: 29%;
+    left: 2%;
+    font-size: 23px;
+    animation-delay: 2s;
+}
+
+.doodle4 {
+    top: 39%;
+    right: 4%;
+    font-size: 21px;
+    animation-delay: 3s;
+}
+
+.doodle5 {
+    top: 51%;
+    left: 5%;
+    font-size: 22px;
+    animation-delay: 1.5s;
+}
+
+.doodle6 {
+    top: 62%;
+    right: 5%;
+    font-size: 23px;
+    animation-delay: 2.5s;
+}
+
+.doodle7 {
+    top: 74%;
+    left: 3%;
+    font-size: 20px;
+    animation-delay: 4s;
+}
+
+.doodle8 {
+    top: 84%;
+    right: 6%;
+    font-size: 22px;
+    animation-delay: 3.5s;
+}
+
+.doodle9 {
+    top: 93%;
+    left: 8%;
     font-size: 19px;
     animation-delay: 1s;
 }
 
-.d3 {
-    top: 42%;
-    left: 3%;
-    font-size: 18px;
-    animation-delay: 2s;
+.doodle10 {
+    top: 23%;
+    right: 15%;
+    font-size: 17px;
+    animation-delay: 4.5s;
 }
 
-.d4 {
-    top: 54%;
-    right: 4%;
-    font-size: 24px;
-    animation-delay: 3s;
-}
-
-.d5 {
-    top: 73%;
-    left: 7%;
-    font-size: 18px;
-    animation-delay: 1.5s;
-}
-
-.d6 {
-    top: 84%;
-    right: 8%;
-    font-size: 20px;
-    animation-delay: 2.5s;
-}
-
-@keyframes drift {
-    0%,100% {
-        transform: translateY(0) rotate(-3deg);
+@keyframes doodleFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
     }
 
     50% {
-        transform: translateY(-10px) rotate(4deg);
+        transform: translateY(-9px) rotate(4deg);
     }
 }
 
 
-/* GENERAL */
+/* =========================================
+   GENERAL
+   ========================================= */
 
 main {
     position: relative;
@@ -149,7 +182,9 @@ section {
 }
 
 
-/* HERO */
+/* =========================================
+   HERO
+   ========================================= */
 
 .hero {
     min-height: 100vh;
@@ -210,7 +245,9 @@ section {
 }
 
 
-/* LOVE */
+/* =========================================
+   LOVE
+   ========================================= */
 
 .intro {
     text-align: center;
@@ -235,7 +272,9 @@ section {
 }
 
 
-/* FLOWERS */
+/* =========================================
+   FLOWERS / BIRTHDAY CAT
+   ========================================= */
 
 .flowers {
     text-align: center;
@@ -274,19 +313,16 @@ section {
     bottom: 35px;
 }
 
-.flowers-card h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(40px, 6vw, 60px);
-    font-weight: 500;
-}
 
-.bouquet-wrap {
+/* Birthday cat now takes the old bouquet position */
+
+.birthday-cat-wrap {
     margin: 35px auto 0;
     max-width: 430px;
-    animation: bouquetFloat 5s ease-in-out infinite;
+    animation: birthdayCatFloat 5s ease-in-out infinite;
 }
 
-.bouquet {
+.birthday-cat {
     width: 100%;
     height: auto;
     display: block;
@@ -294,7 +330,7 @@ section {
     filter: drop-shadow(0 18px 25px rgba(80,70,90,.13));
 }
 
-@keyframes bouquetFloat {
+@keyframes birthdayCatFloat {
     0%,100% {
         transform: translateY(0) rotate(-1deg);
     }
@@ -304,43 +340,17 @@ section {
     }
 }
 
-
-/* BIRTHDAY CAT NEAR FLOWERS */
-
-.cat-near-flowers {
-    margin: 25px auto 0;
-    max-width: 330px;
-    text-align: center;
-}
-
-.cat-near-flowers img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
-    filter: drop-shadow(0 15px 22px rgba(70,60,80,.12));
-    animation: catFloat 5.5s ease-in-out infinite;
-}
-
-@keyframes catFloat {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-11px);
-    }
-}
-
 .cat-note {
-    margin-top: 5px;
+    margin-top: 10px;
     font-family: "Parisienne", cursive;
     font-size: 25px;
     color: #8c7891;
 }
 
 
-/* MEMORIES */
+/* =========================================
+   MEMORIES
+   ========================================= */
 
 .memories {
     text-align: center;
@@ -411,7 +421,14 @@ section {
     width: 100%;
     aspect-ratio: 1 / 1.08;
     object-fit: cover;
+    object-position: center center;
     display: block;
+}
+
+/* Specifically center photo 2 */
+
+.polaroid-holder:nth-child(2) .polaroid img {
+    object-position: center center;
 }
 
 .caption {
@@ -419,10 +436,30 @@ section {
     font-family: "Parisienne", cursive;
     font-size: 21px;
     color: #645c69;
+    position: relative;
+}
+
+/* Little hearts behind the requested captions */
+
+.polaroid-holder:nth-child(2) .caption::before,
+.polaroid-holder:nth-child(3) .caption::before {
+    content: "♡  ♡";
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    transform: translateX(-50%);
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    letter-spacing: 12px;
+    color: rgba(150,123,145,.18);
+    z-index: -1;
+    white-space: nowrap;
 }
 
 
-/* LITTLE THINGS */
+/* =========================================
+   LITTLE THINGS
+   ========================================= */
 
 .little-things {
     text-align: center;
@@ -511,7 +548,9 @@ section {
 }
 
 
-/* HOME */
+/* =========================================
+   HOME
+   ========================================= */
 
 .home-line {
     text-align: center;
@@ -529,7 +568,9 @@ section {
 }
 
 
-/* FINAL */
+/* =========================================
+   FINAL
+   ========================================= */
 
 .final {
     text-align: center;
@@ -606,7 +647,9 @@ section {
 }
 
 
-/* FOOTER */
+/* =========================================
+   FOOTER
+   ========================================= */
 
 footer {
     text-align: center;
@@ -617,7 +660,9 @@ footer {
 }
 
 
-/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE
+   ========================================= */
 
 @media (max-width: 850px) {
 
@@ -657,12 +702,8 @@ footer {
         padding: 48px 20px;
     }
 
-    .bouquet-wrap {
+    .birthday-cat-wrap {
         max-width: 310px;
-    }
-
-    .cat-near-flowers {
-        max-width: 270px;
     }
 
     .polaroid-gallery {
@@ -699,21 +740,29 @@ footer {
     }
 
     .doodle {
-        opacity: .25;
+        opacity: .12;
     }
 }
 
 </style>
 </head>
 
+
 <body>
 
-<div class="doodle d1">✦</div>
-<div class="doodle d2">♡</div>
-<div class="doodle d3">⌁</div>
-<div class="doodle d4">✿</div>
-<div class="doodle d5">⋆</div>
-<div class="doodle d6">♡</div>
+
+<!-- SUBTLE DOODLES -->
+
+<div class="doodle doodle1">🥑</div>
+<div class="doodle doodle2">🧋</div>
+<div class="doodle doodle3">🍝</div>
+<div class="doodle doodle4">♡</div>
+<div class="doodle doodle5">🥑</div>
+<div class="doodle doodle6">🧋</div>
+<div class="doodle doodle7">🍝</div>
+<div class="doodle doodle8">✦</div>
+<div class="doodle doodle9">♡</div>
+<div class="doodle doodle10">🥑</div>
 
 
 <main>
@@ -764,7 +813,7 @@ footer {
 </section>
 
 
-<!-- FLOWERS + BIRTHDAY CAT -->
+<!-- BIRTHDAY CAT -->
 
 <section class="flowers">
 
@@ -774,34 +823,20 @@ footer {
             a little something for you ♡
         </div>
 
-        <h2>
-            because you<br>
-            deserve flowers too hehe
-        </h2>
 
-
-        <div class="bouquet-wrap">
+        <div class="birthday-cat-wrap">
 
             <img
-                src="bouquet.png"
-                class="bouquet"
-                alt="A bouquet for Punnu"
+                src="birthday-cat.jpg"
+                class="birthday-cat"
+                alt="Cute birthday cat"
             >
 
         </div>
 
 
-        <div class="cat-near-flowers">
-
-            <img
-                src="birthday-cat.jpg"
-                alt="Cute birthday cat"
-            >
-
-            <div class="cat-note">
-                a tiny birthday delivery just for you ♡
-            </div>
-
+        <div class="cat-note">
+            a tiny birthday delivery just for you ♡
         </div>
 
     </div>
@@ -827,6 +862,8 @@ footer {
     <div class="polaroid-gallery">
 
 
+        <!-- PHOTO 1 -->
+
         <div class="polaroid-holder">
 
             <div class="thread"></div>
@@ -839,13 +876,15 @@ footer {
                 >
 
                 <div class="caption">
-                    our favourite picture &lt;3
+                    our favourite picture
                 </div>
 
             </div>
 
         </div>
 
+
+        <!-- PHOTO 2 -->
 
         <div class="polaroid-holder">
 
@@ -859,13 +898,15 @@ footer {
                 >
 
                 <div class="caption">
-                    iced coffee lovers &lt;3
+                    iced coffee lovers
                 </div>
 
             </div>
 
         </div>
 
+
+        <!-- PHOTO 3 -->
 
         <div class="polaroid-holder">
 
@@ -879,13 +920,15 @@ footer {
                 >
 
                 <div class="caption">
-                    shopping date hehe &lt;3
+                    shopping date hehe
                 </div>
 
             </div>
 
         </div>
 
+
+        <!-- PHOTO 4 -->
 
         <div class="polaroid-holder">
 
@@ -899,13 +942,15 @@ footer {
                 >
 
                 <div class="caption">
-                    home &lt;3
+                    home
                 </div>
 
             </div>
 
         </div>
 
+
+        <!-- PHOTO 5 -->
 
         <div class="polaroid-holder">
 
@@ -919,7 +964,7 @@ footer {
                 >
 
                 <div class="caption">
-                    forever fav &lt;3
+                    forever fav
                 </div>
 
             </div>
@@ -1108,5 +1153,6 @@ footer {
 
 </body>
 </html>
+
 
 
